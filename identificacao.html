@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Identificação · Leitura Digital</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f5f7f6;
+            font-family: 'Segoe UI', 'Verdana', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+        h2 {
+            color: #1e4f3e;
+            margin-bottom: 0.5rem;
+        }
+        .sub {
+            color: #2a7f5e;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 4px solid #2a7f5e;
+            padding-left: 1rem;
+            text-align: left;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #0f3d2e;
+        }
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 1rem;
+            border: 2px solid #d4e2da;
+            border-radius: 24px;
+            background: white;
+            transition: 0.2s;
+        }
+        input:focus, select:focus {
+            border-color: #1a5e44;
+            outline: none;
+        }
+        button {
+            background: #1a5e44;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: 0.2s;
+        }
+        button:disabled {
+            background: #b0c9bc;
+            cursor: not-allowed;
+        }
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #7c9b8c;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>📖 O Alienista</h2>
+    <div class="sub">Machado de Assis · Audiobook digital</div>
+
+    <div class="form-group">
+        <label>📛 Nome completo</label>
+        <input type="text" id="studentName" placeholder="Digite seu nome" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label>📌 Turma</label>
+        <select id="classSelect">
+            <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>📅 Bimestre</label>
+        <select id="bimesterSelect">
+            <option value="1º">1º bimestre</option><option value="2º">2º bimestre</option>
+            <option value="3º">3º bimestre</option><option value="4º">4º bimestre</option>
+        </select>
+    </div>
+
+    <button id="startBtn" disabled>▶ Iniciar Leitura</button>
+    <div class="footer">Ao iniciar, seus dados de acesso serão registrados para acompanhamento.</div>
+</div>
+
+<script>
+    (function() {
+        const nomeInput = document.getElementById('studentName');
+        const turmaSelect = document.getElementById('classSelect');
+        const bimestreSelect = document.getElementById('bimesterSelect');
+        const startButton = document.getElementById('startBtn');
+        const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwfvbCQNt9lw5YddRhkoKFnTjZyUv0MK3ba3DHvkHqCT0cw-9NtlS0xuCvkDRghBTJx/exec';
+
+        // Habilita/desabilita botão
+        function toggleButton() {
+            startButton.disabled = nomeInput.value.trim() === '';
+        }
+        nomeInput.addEventListener('input', toggleButton);
+        toggleButton();
+
+        // Envio silencioso + redirecionamento
+        startButton.addEventListener('click', async function() {
+            const nome = nomeInput.value.trim();
+            const turma = turmaSelect.value;
+            const bimestre = bimestreSelect.value;
+            const inicio = new Date().toISOString();
+
+            // Guarda no localStorage para uso futuro
+            localStorage.setItem('alunoNome', nome);
+            localStorage.setItem('alunoTurma', turma);
+            localStorage.setItem('alunoBimestre', bimestre);
+            localStorage.setItem('inicioLeitura', inicio);
+
+            // Prepara dados para a planilha
+            const payload = {
+                nome: nome,
+                turma: turma,
+                bimestre: bimestre,
+                status: 'iniciou'
+            };
+
+            // Envia para o Google Apps Script (sem travar a navegação)
+            try {
+                fetch(WEBAPP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',          // mais silencioso, sem erro de CORS
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).catch(e => console.warn("Erro no envio para planilha:", e));
+            } catch(e) {
+                console.warn("Erro silencioso:", e);
+            }
+
+            // Redireciona para o índice
+            window.location.href = 'indice.html';
+        });
+    })();
+</script>
+</body>
+</html>
