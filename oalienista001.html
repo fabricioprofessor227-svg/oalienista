@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo I</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .nav-btn {
+            background: #e6f0ea;
+            border: 1.5px solid #a2bfb1;
+            padding: 16px 18px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-radius: 60px;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            color: #1a4e3a;
+            margin-top: 10px;
+        }
+        .nav-btn:active { background: #cde0d6; }
+
+        .btn-index {
+            background: #1a5e44;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 60px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .btn-index:active { background: #0f4632; }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo I</h1>
+        <div class="progress-row">
+            <span id="pageXofY">Página 1 de 4</span>
+            <span id="progressPercent">25%</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 25%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <button id="backToIndexBtn" class="btn-index" style="display: none;">📖 Voltar ao Índice</button>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO I (DIVIDIDO EM 4 PÁGINAS)
+        const pageContents = [
+            // Página 1
+            `<p><strong>CAPÍTULO I - DE COMO ITAGUAÍ GANHOU UMA CASA DE ORATES</strong></p>
+            <p>As crônicas da vila de Itaguaí dizem que em tempos remotos vivera ali um certo médico, o Dr. Simão Bacamarte, filho da nobreza da terra e o maior dos médicos do Brasil, de Portugal e das Espanhas. Estudara em Coimbra e Pádua. Aos trinta e quatro anos regressou ao Brasil, não podendo el-rei alcançar dele que ficasse em Coimbra, regendo a universidade, ou em Lisboa, expedindo os negócios da monarquia.</p>
+            <p>—A ciência, disse ele a Sua Majestade, é o meu emprego único; Itaguaí é o meu universo.</p>
+            <p>Dito isso, meteu-se em Itaguaí, e entregou-se de corpo e alma ao estudo da ciência, alternando as curas com as leituras, e demonstrando os teoremas com cataplasmas. Aos quarenta anos casou com D. Evarista da Costa e Mascarenhas, senhora de vinte e cinco anos, viúva de um juiz de fora, e não bonita nem simpática. Um dos tios dele, caçador de pacas perante o Eterno, e não menos franco, admirou-se de semelhante escolha e disse-lho.</p>
+            <p>Simão Bacamarte explicou-lhe que D. Evarista reunia condições fisiológicas e anatômicas de primeira ordem, digeria com facilidade, dormia regularmente, tinha bom pulso, e excelente vista; estava assim apta para dar-lhe filhos robustos, sãos e inteligentes. Se além dessas prendas — únicas dignas da preocupação de um sábio — D. Evarista era mal composta de feições, longe de lastimá-lo, agradecia-o a Deus, porquanto não corria o risco de preterir os interesses da ciência na contemplação exclusiva, miúda e vulgar da consorte.</p>
+            <p>D. Evarista mentiu às esperanças do Dr. Bacamarte, não lhe deu filhos robustos nem mofinos. A índole natural da ciência é a longanimidade; o nosso médico esperou três anos, depois quatro, depois cinco. Ao cabo desse tempo fez um estudo profundo da matéria, releu todos os escritores árabes e outros, que trouxera para Itaguaí, enviou consultas às universidades italianas e alemãs, e acabou por aconselhar à mulher um regímen alimentício especial. A ilustre dama, nutrida exclusivamente com a bela carne de porco de Itaguaí, não atendeu às admoestações do esposo; e à sua resistência — explicável, mas inqualificável — devemos a total extinção da dinastia dos Bacamartes.</p>`,
+            
+            // Página 2
+            `<p>Mas a ciência tem o inefável dom de curar todas as mágoas; o nosso médico mergulhou inteiramente no estudo e na prática da medicina. Foi então que um dos recantos desta lhe chamou especialmente a atenção — o recanto psíquico, o exame de patologia cerebral. Não havia na colônia, e ainda no reino, uma só autoridade em semelhante matéria, mal explorada, ou quase inexplorada. Simão Bacamarte compreendeu que a ciência lusitana, e particularmente a brasileira, podia cobrir-se de "louros imarcescíveis" — expressão usada por ele mesmo, mas em um arroubo de intimidade doméstica; exteriormente era modesto, segundo convém aos sabedores.</p>
+            <p>—A saúde da alma, bradou ele, é a ocupação mais digna do médico.</p>
+            <p>—Do verdadeiro médico, emendou Crispim Soares, boticário da vila, e um dos seus amigos e comensais.</p>
+            <p>A vereança de Itaguaí, entre outros pecados de que é argüida pelos cronistas, tinha o de não fazer caso dos dementes. Assim é que cada louco furioso era trancado em uma alcova, na própria casa, e, não curado, mas descurado, até que a morte o vinha defraudar do benefício da vida; os mansos andavam à solta pela rua. Simão Bacamarte entendeu desde logo reformar tão ruim costume; pediu licença à Câmara para agasalhar e tratar no edifício que ia construir todos os loucos de Itaguaí, e das demais vilas e cidades, mediante um estipêndio, que a Câmara lhe daria quando a família do enfermo o não pudesse fazer.</p>
+            <p>A proposta excitou a curiosidade de toda a vila, e encontrou grande resistência, tão certo é que dificilmente se desarraigam hábitos absurdos, ou ainda maus. A idéia de meter os loucos na mesma casa, vivendo em comum, pareceu em si mesma sintoma de demência e não faltou quem o insinuasse à própria mulher do médico.</p>
+            <p>—Olhe, D. Evarista, disse-lhe o Padre Lopes, vigário do lugar, veja se seu marido dá um passeio ao Rio de Janeiro. Isso de estudar sempre, sempre, não é bom, vira o juízo.</p>`,
+            
+            // Página 3
+            `<p>D. Evarista ficou aterrada. Foi ter com o marido, disse-lhe "que estava com desejos", um principalmente, o de vir ao Rio de Janeiro e comer tudo o que a ele lhe parecesse adequado a certo fim. Mas aquele grande homem, com a rara sagacidade que o distinguia, penetrou a intenção da esposa e redargüiu-lhe sorrindo que não tivesse medo.</p>
+            <p>Dali foi à Câmara, onde os vereadores debatiam a proposta, e defendeu-a com tanta eloqüência, que a maioria resolveu autorizá-lo ao que pedira, votando ao mesmo tempo um imposto destinado a subsidiar o tratamento, alojamento e mantimento dos doidos pobres. A matéria do imposto não foi fácil achá-la; tudo estava tributado em Itaguaí. Depois de longos estudos, assentou-se em permitir o uso de dois penachos nos cavalos dos enterros. Quem quisesse emplumar os cavalos de um coche mortuário pagaria dois tostões à Câmara, repetindo-se tantas vezes esta quantia quantas fossem as horas decorridas entre a do falecimento e a da última bênção na sepultura. O escrivão perdeu-se nos cálculos aritméticos do rendimento possível da nova taxa; e um dos vereadores, que não acreditava na empresa do médico, pediu que se relevasse o escrivão de um trabalho inútil.</p>
+            <p>— Os cálculos não são precisos, disse ele, porque o Dr. Bacamarte não arranja nada. Quem é que viu agora meter todos os doidos dentro da mesma casa?</p>
+            <p>Enganava-se o digno magistrado; o médico arranjou tudo. Uma vez empossado da licença começou logo a construir a casa.</p>`,
+            
+            // Página 4
+            `<p>Era na Rua Nova, a mais bela rua de Itaguaí naquele tempo; tinha cinqüenta janelas por lado, um pátio no centro, e numerosos cubículos para os hóspedes. Como fosse grande arabista, achou no Corão que Maomé declara veneráveis os doidos, pela consideração de que Alá lhes tira o juízo para que não pequem. A idéia pareceu-lhe bonita e profunda, e ele a fez gravar no frontispício da casa; mas, como tinha medo ao vigário, e por tabela ao bispo, atribuiu o pensamento a Benedito VIII, merecendo com essa fraude aliás pia, que o Padre Lopes lhe contasse, ao almoço, a vida daquele pontífice eminente.</p>
+            <p>A Casa Verde foi o nome dado ao asilo, por alusão à cor das janelas, que pela primeira vez apareciam verdes em Itaguaí. Inaugurou-se com imensa pompa; de todas as vilas e povoações próximas, e até remotas, e da própria cidade do Rio de Janeiro, correu gente para assistir às cerimônias, que duraram sete dias. Muitos dementes já estavam recolhidos; e os parentes tiveram ocasião de ver o carinho paternal e a caridade cristã com que eles iam ser tratados. D. Evarista, contentíssima com a glória do marido, vestiu-se luxuosamente, cobriu-se de jóias, flores e sedas. Ela foi uma verdadeira rainha naqueles dias memoráveis; ninguém deixou de ir visitá-la duas e três vezes, apesar dos costumes caseiros e recatados do século, e não só a cortejavam como a louvavam; porquanto — e este fato é um documento altamente honroso para a sociedade do tempo — porquanto viam nela a feliz esposa de um alto espírito, de um varão ilustre, e, se lhe tinham inveja, era a santa e nobre inveja dos admiradores.</p>
+            <p>Ao cabo de sete dias expiraram as festas públicas; Itaguaí tinha finalmente uma casa de orates.</p>`
+        ];
+
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageContent = document.getElementById('pageContent');
+        const pageXofY = document.getElementById('pageXofY');
+        const progressFill = document.getElementById('progressFill');
+        const progressPercent = document.getElementById('progressPercent');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = 1;
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            pageXofY.textContent = `Página ${currentPage+1} de ${totalPages}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            progressPercent.textContent = Math.round(percent) + '%';
+            
+            // Exibe botão Voltar ao Índice apenas na última página
+            if (currentPage === totalPages-1) {
+                backToIndexBtn.style.display = 'block';
+            } else {
+                backToIndexBtn.style.display = 'none';
+            }
+            
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                // Na primeira página, seta esquerda volta para o ÍNDICE
+                window.location.href = 'indice.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                // Na última página, seta direita avança para o Capítulo II
+                window.location.href = 'oalienista002.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        // Eventos
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => {
+            window.location.href = 'indice.html';
+        });
+        fontMinus.addEventListener('click', () => {
+            if (fontSizeIndex > 0) fontSizeIndex--;
+            applyFontSize();
+        });
+        fontPlus.addEventListener('click', () => {
+            if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++;
+            applyFontSize();
+        });
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+        });
+        speakBtn.addEventListener('click', () => {
+            if (speaking) stopSpeaking();
+            else speakPage();
+        });
+
+        // Inicialização
+        updateUI();
+    })();
+</script>
+</body>
+</html>
