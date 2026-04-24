@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo XI</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo XI</h1>
+        <div class="progress-row">
+            <span id="pageIndicator">Página 34</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO XI (DIVIDIDO EM 2 PÁGINAS)
+        const pageContents = [
+            // Página 1 (global 34)
+            `<p><strong>CAPÍTULO XI - O ASSOMBRO DE ITAGUAÍ</strong></p>
+            <p>E agora prepare-se o leitor para o mesmo assombro em que ficou a vila ao saber um dia que os loucos da Casa Verde iam todos ser postos na rua.</p>
+            <p>—Todos?</p>
+            <p>—Todos.</p>
+            <p>—É impossível; alguns sim, mas todos...</p>
+            <p>—Todos. Assim o disse ele no ofício que mandou hoje de manhã à Câmara.</p>
+            <p>De fato o alienista oficiara à Câmara expondo: 1º que verificara das estatísticas da vila e da Casa Verde que quatro quintos da população estavam aposentados naquele estabelecimento; 2º que esta deslocação de população levara-o a examinar os fundamentos da sua teoria das moléstias cerebrais, teoria que excluía da razão todos os casos em que o equilíbrio das faculdades não fosse perfeito e absoluto; 3º que, desse exame e do fato estatístico, resultara para ele a convicção de que a verdadeira doutrina não era aquela, mas a oposta, e portanto, que se devia admitir como normal e exemplar o desequilíbrio das faculdades e como hipóteses patológicas todos os casos em que aquele equilíbrio fosse ininterrupto; 4º que à vista disso declarava à Câmara que ia dar liberdade aos reclusos da Casa Verde e agasalhar nela as pessoas que se achassem nas condições agora expostas; 5º que, tratando de descobrir a verdade científica, não se pouparia a esforços de toda a natureza, esperando da Câmara igual dedicação; 6º que restituía à Câmara e aos particulares a soma do estipêndio recebido para alojamento dos supostos loucos, descontada a parte efetivamente gasta com a alimentação, roupa, etc.; o que a Câmara mandaria verificar nos livros e arcas da Casa Verde.</p>
+            <p>O assombro de Itaguaí foi grande; não foi menor a alegria dos parentes e amigos dos reclusos. Jantares, danças, luminárias, músicas, tudo houve para celebrar tão fausto acontecimento. Não descrevo as festas por não interessarem ao nosso propósito; mas foram esplêndidas, tocantes e prolongadas.</p>`,
+            
+            // Página 2 (global 35)
+            `<p>E vão assim as coisas humanas! No meio do regozijo produzido pelo ofício de Simão Bacamarte, ninguém advertia na frase final do § 4º, uma frase cheia de experiências futuras.</p>`
+        ];
+
+        const startPage = 34;          // Primeira página deste capítulo (global)
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
+        const pageContent = document.getElementById('pageContent');
+        const progressFill = document.getElementById('progressFill');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rateBtn = document.getElementById('rateBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = rates[rateIndex];
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                window.location.href = 'oalienista010.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                window.location.href = 'oalienista012.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            if (speaking) speakPage();
+        }
+
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => { window.location.href = 'indice.html'; });
+        fontMinus.addEventListener('click', () => { if (fontSizeIndex > 0) fontSizeIndex--; applyFontSize(); });
+        fontPlus.addEventListener('click', () => { if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++; applyFontSize(); });
+        fullscreenBtn.addEventListener('click', () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); });
+        speakBtn.addEventListener('click', () => { if (speaking) stopSpeaking(); else speakPage(); });
+        rateBtn.addEventListener('click', cycleRate);
+
+        cycleRate();
+        updateUI();
+    })();
+</script>
+</body>
+</html>
