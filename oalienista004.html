@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo IV</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo IV</h1>
+        <div class="progress-row">
+            <span id="pageXofY">Página 1 de 4</span>
+            <span id="progressPercent">25%</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 25%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn small" id="rate1xBtn">1x</button>
+        <button class="tool-btn small" id="rate13xBtn">1.3x</button>
+        <button class="tool-btn small" id="rate15xBtn">1.5x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO IV (DIVIDIDO EM 4 PÁGINAS)
+        const pageContents = [
+            // Página 1
+            `<p><strong>CAPÍTULO IV - UMA TEORIA NOVA</strong></p>
+            <p>Ao passo que D. Evarista, em lágrimas, vinha buscando o Rio de Janeiro, Simão Bacamarte estudava por todos os lados uma certa idéia arrojada e nova, própria a alargar as bases da psicologia. Todo o tempo que lhe sobrava dos cuidados da Casa Verde, era pouco para andar na rua, ou de casa em casa, conversando as gentes, sobre trinta mil assuntos, e virgulando as falas de um olhar que metia medo aos mais heróicos.</p>
+            <p>Um dia de manhã — eram passadas três semanas —, estando Crispim Soares ocupado em temperar um medicamento, vieram dizer-lhe que o alienista o mandava chamar.</p>
+            <p>—Trata-se de negócio importante, segundo ele me disse, acrescentou o portador.</p>
+            <p>Crispim empalideceu. Que negócio importante podia ser, se não alguma notícia da comitiva, e especialmente da mulher? Porque este tópico deve ficar claramente definido, visto insistirem nele os cronistas; Crispim amava a mulher, e, desde trinta anos, nunca estiveram separados um só dia. Assim se explicam os monólogos que ele fazia agora, e que os fâmulos lhe ouviam muita vez: —"Anda, bem feito, quem te mandou consentir na viagem de Cesária? Bajulador, torpe bajulador! Só para adular ao Dr. Bacamarte. Pois agora agüenta-te; anda, agüenta-te, alma de lacaio, fracalhão, vil, miserável. Dizes amém a tudo, não é? aí tens o lucro, biltre!" — E muitos outros nomes feios, que um homem não deve dizer aos outros, quanto mais a si mesmo. Daqui a imaginar o efeito do recado é um nada. Tão depressa ele o recebeu como abriu mão das drogas e voou à Casa Verde.</p>
+            <p>Simão Bacamarte recebeu-o com a alegria própria de um sábio, uma alegria abotoada de circunspeção até o pescoço.</p>
+            <p>—Estou muito contente, disse ele.</p>
+            <p>—Notícias do nosso povo? perguntou o boticário com a voz trêmula.</p>
+            <p>O alienista fez um gesto magnífico, e respondeu:</p>
+            <p>—Trata-se de coisa mais alta, trata-se de uma experiência científica. Digo experiência, porque não me atrevo a assegurar desde já a minha idéia; nem a ciência é outra coisa, Sr. Soares, senão uma investigação constante. Trata-se, pois, de uma experiência, mas uma experiência que vai mudar a face da Terra. A loucura, objeto dos meus estudos, era até agora uma ilha perdida no oceano da razão; começo a suspeitar que é um continente.</p>
+            <p>Disse isto, e calou-se, para ruminar o pasmo do boticário. Depois explicou compridamente a sua idéia. No conceito dele a insânia abrangia uma vasta superfície de cérebros; e desenvolveu isto com grande cópia de raciocínios, de textos, de exemplos.</p>`,
+            
+            // Página 2
+            `<p>Os exemplos achou-os na história e em Itaguaí mas, como um raro espírito que era, reconheceu o perigo de citar todos os casos de Itaguaí e refugiou-se na história. Assim, apontou com especialidade alguns personagens célebres, Sócrates, que tinha um demônio familiar, Pascal, que via um abismo à esquerda, Maomé, Caracala, Domiciano, Calígula, etc., uma enfiada de casos e pessoas, em que de mistura vinham entidades odiosas, e entidades ridículas. E porque o boticário se admirasse de uma tal promiscuidade, o alienista disse-lhe que era tudo a mesma coisa, e até acrescentou sentenciosamente:</p>
+            <p>—A ferocidade, Sr. Soares, é o grotesco a sério.</p>
+            <p>—Gracioso, muito gracioso! exclamou Crispim Soares levantando as mãos ao céu.</p>
+            <p>Quanto à idéia de ampliar o território da loucura, achou-a o boticário extravagante; mas a modéstia, principal adorno de seu espírito, não lhe sofreu confessar outra coisa além de um nobre entusiasmo; declarou-a sublime e verdadeira, e acrescentou que era "caso de matraca". Esta expressão não tem equivalente no estilo moderno. Naquele tempo, Itaguaí que como as demais vilas, arraiais e povoações da colônia, não dispunha de imprensa, tinha dois modos de divulgar uma notícia; ou por meio de cartazes manuscritos e pregados na porta da Câmara, e da matriz; — ou por meio de matraca.</p>
+            <p>Eis em que consistia este segundo uso. Contratava-se um homem, por um ou mais dias, para andar as ruas do povoado, com uma matraca na mão.</p>
+            <p>De quando em quando tocava a matraca, reunia-se gente, e ele anunciava o que lhe incumbiam, — um remédio para sezões, umas terras lavradias, um soneto, um donativo eclesiástico, a melhor tesoura da vila, o mais belo discurso do ano, etc. O sistema tinha inconvenientes para a paz pública; mas era conservado pela grande energia de divulgação que possuía. Por exemplo, um dos vereadores, — aquele justamente que mais se opusera à criação da Casa Verde, — desfrutava a reputação de perfeito educador de cobras e macacos, e aliás nunca domesticara um só desses bichos; mas, tinha o cuidado de fazer trabalhar a matraca todos os meses. E dizem as crônicas que algumas pessoas afirmavam ter visto cascavéis dançando no peito do vereador; afirmação perfeitamente falsa, mas só devida à absoluta confiança no sistema. Verdade, verdade, nem todas as instituições do antigo regímen mereciam o desprezo do nosso século.</p>`,
+            
+            // Página 3
+            `<p>—Há melhor do que anunciar a minha idéia, é praticá-la, respondeu o alienista à insinuação do boticário.</p>
+            <p>E o boticário, não divergindo sensivelmente deste modo de ver, disse-lhe que sim, que era melhor começar pela execução.</p>
+            <p>—Sempre haverá tempo de a dar à matraca, concluiu ele.</p>
+            <p>Simão Bacamarte refletiu ainda um instante, e disse:</p>
+            <p>—Suponho o espírito humano uma vasta concha, o meu fim, Sr. Soares, é ver se posso extrair a pérola, que é a razão; por outros termos, demarquemos definitivamente os limites da razão e da loucura. A razão é o perfeito equilíbrio de todas as faculdades; fora daí insânia, insânia e só insânia.</p>
+            <p>O Vigário Lopes a quem ele confiou a nova teoria, declarou lisamente que não chegava a entendê-la, que era uma obra absurda, e, se não era absurda, era de tal modo colossal que não merecia princípio de execução.</p>
+            <p>—Com a definição atual, que é a de todos os tempos, acrescentou, a loucura e a razão estão perfeitamente delimitadas. Sabe-se onde uma acaba e onde a outra começa. Para que transpor a cerca?</p>
+            <p>Sobre o lábio fino e discreto do alienista rogou a vaga sombra de uma intenção de riso, em que o desdém vinha casado à comiseração; mas nenhuma palavra saiu de suas egrégias entranhas.</p>
+            <p>A ciência contentou-se em estender a mão à teologia, — com tal segurança, que a teologia não soube enfim se devia crer em si ou na outra. Itaguaí e o universo ficavam à beira de uma revolução.</p>`
+        ];
+
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        let currentRate = 1;
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageContent = document.getElementById('pageContent');
+        const pageXofY = document.getElementById('pageXofY');
+        const progressFill = document.getElementById('progressFill');
+        const progressPercent = document.getElementById('progressPercent');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rate1x = document.getElementById('rate1xBtn');
+        const rate13x = document.getElementById('rate13xBtn');
+        const rate15x = document.getElementById('rate15xBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = currentRate;
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            pageXofY.textContent = `Página ${currentPage+1} de ${totalPages}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            progressPercent.textContent = Math.round(percent) + '%';
+            
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                window.location.href = 'oalienista003.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                window.location.href = 'oalienista005.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function setRate(rate) {
+            currentRate = rate;
+            rate1x.style.fontWeight = rate === 1 ? 'bold' : 'normal';
+            rate13x.style.fontWeight = rate === 1.3 ? 'bold' : 'normal';
+            rate15x.style.fontWeight = rate === 1.5 ? 'bold' : 'normal';
+        }
+
+        // Eventos
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => {
+            window.location.href = 'indice.html';
+        });
+        fontMinus.addEventListener('click', () => {
+            if (fontSizeIndex > 0) fontSizeIndex--;
+            applyFontSize();
+        });
+        fontPlus.addEventListener('click', () => {
+            if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++;
+            applyFontSize();
+        });
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+        });
+        speakBtn.addEventListener('click', () => {
+            if (speaking) stopSpeaking();
+            else speakPage();
+        });
+        rate1x.addEventListener('click', () => setRate(1));
+        rate13x.addEventListener('click', () => setRate(1.3));
+        rate15x.addEventListener('click', () => setRate(1.5));
+
+        setRate(1);
+        updateUI();
+    })();
+</script>
+</body>
+</html>
