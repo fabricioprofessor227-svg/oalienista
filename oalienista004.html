@@ -79,10 +79,73 @@
             margin-top: 8px;
             width: auto;
             display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
         }
         .index-wrapper {
             text-align: right;
             margin-top: 5px;
+        }
+
+        /* Estilos do Easter Egg */
+        .easter-egg-box {
+            background: #fef7e0;
+            border-left: 5px solid #e6a017;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 20px 0 15px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+        .easter-egg-text {
+            flex: 3;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .easter-egg-text p {
+            margin-bottom: 12px;
+        }
+        .easter-egg-img {
+            flex: 1;
+            min-width: 80px;
+            text-align: center;
+        }
+        .easter-egg-img img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .easter-btn {
+            background: #e6a017;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            margin-top: 8px;
+        }
+        .easter-btn:hover {
+            background: #c4880f;
+            transform: scale(1.02);
+        }
+        @media (max-width: 600px) {
+            .easter-egg-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .easter-egg-img {
+                order: -1;
+            }
         }
     </style>
 </head>
@@ -114,37 +177,52 @@
     (function(){
         // Conteúdo do Capítulo IV (4 páginas)
         const pageContents = [
+            // Página 1 (global 11)
             `<p><strong>CAPÍTULO IV - UMA TEORIA NOVA</strong></p>
             <p>Ao passo que D. Evarista, em lágrimas, vinha buscando o Rio de Janeiro, Simão Bacamarte estudava por todos os lados uma certa idéia arrojada e nova, própria a alargar as bases da psicologia. Todo o tempo que lhe sobrava dos cuidados da Casa Verde, era pouco para andar na rua, ou de casa em casa, conversando as gentes, sobre trinta mil assuntos, e virgulando as falas de um olhar que metia medo aos mais heróicos.</p>
             <p>Um dia de manhã — eram passadas três semanas —, estando Crispim Soares ocupado em temperar um medicamento, vieram dizer-lhe que o alienista o mandava chamar.</p>
             <p>—Trata-se de negócio importante, segundo ele me disse, acrescentou o portador.</p>
-            <p>Crispim empalideceu. Que negócio importante podia ser, se não alguma notícia da comitiva, e especialmente da mulher? Porque este tópico deve ficar claramente definido, visto insistirem nele os cronistas; Crispim amava a mulher, e, desde trinta anos, nunca estiveram separados um só dia. Assim se explicam os monólogos que ele fazia agora, e que os fâmulos lhe ouviam muita vez: —"Anda, bem feito, quem te mandou consentir na viagem de Cesária? Bajulador, torpe bajulador! Só para adular ao Dr. Bacamarte. Pois agora agüenta-te; anda, agüenta-te, alma de lacaio, fracalhão, vil, miserável. Dizes amém a tudo, não é? aí tens o lucro, biltre!" — E muitos outros nomes feios, que um homem não deve dizer aos outros, quanto mais a si mesmo. Daqui a imaginar o efeito do recado é um nada. Tão depressa ele o recebeu como abriu mão das drogas e voou à Casa Verde.</p>
-            <p>Simão Bacamarte recebeu-o com a alegria própria de um sábio, uma alegria abotoada de circunspeção até o pescoço.</p>
+            <p>Crispim empalideceu. Que negócio importante podia ser, se não alguma notícia da comitiva, e especialmente da mulher? Crispim amava a mulher, e nunca estiveram separados um só dia. Assim se explicam os monólogos que ele fazia agora. Tão depressa recebeu o recado como voou à Casa Verde.</p>
+            <p>Simão Bacamarte recebeu-o com a alegria própria de um sábio.</p>
             <p>—Estou muito contente, disse ele.</p>
-            <p>—Notícias do nosso povo? perguntou o boticário com a voz trêmula.</p>
+            <p>—Notícias do nosso povo? perguntou o boticário.</p>
             <p>O alienista fez um gesto magnífico, e respondeu:</p>
-            <p>—Trata-se de coisa mais alta, trata-se de uma experiência científica. Digo experiência, porque não me atrevo a assegurar desde já a minha idéia; nem a ciência é outra coisa, Sr. Soares, senão uma investigação constante. Trata-se, pois, de uma experiência, mas uma experiência que vai mudar a face da Terra. A loucura, objeto dos meus estudos, era até agora uma ilha perdida no oceano da razão; começo a suspeitar que é um continente.</p>
-            <p>Disse isto, e calou-se, para ruminar o pasmo do boticário. Depois explicou compridamente a sua idéia. No conceito dele a insânia abrangia uma vasta superfície de cérebros; e desenvolveu isto com grande cópia de raciocínios, de textos, de exemplos.</p>`,
+            <p>—Trata-se de uma experiência científica. A loucura, objeto dos meus estudos, era até agora uma ilha perdida no oceano da razão; começo a suspeitar que é um continente.</p>
+            <p>Disse isto, e explicou sua idéia: a insânia abrangia uma vasta superfície de cérebros.</p>`,
             
-            `<p>Os exemplos achou-os na história e em Itaguaí mas, como um raro espírito que era, reconheceu o perigo de citar todos os casos de Itaguaí e refugiou-se na história. Assim, apontou com especialidade alguns personagens célebres, Sócrates, que tinha um demônio familiar, Pascal, que via um abismo à esquerda, Maomé, Caracala, Domiciano, Calígula, etc., uma enfiada de casos e pessoas, em que de mistura vinham entidades odiosas, e entidades ridículas. E porque o boticário se admirasse de uma tal promiscuidade, o alienista disse-lhe que era tudo a mesma coisa, e até acrescentou sentenciosamente:</p>
+            // Página 2 (global 12)
+            `<p>Os exemplos achou-os na história e em Itaguaí. Apontou Sócrates (com seu demônio familiar), Pascal (que via um abismo à esquerda), Maomé, Caracala, Domiciano, Calígula. E porque o boticário se admirasse da promiscuidade, o alienista disse-lhe que era tudo a mesma coisa:</p>
             <p>—A ferocidade, Sr. Soares, é o grotesco a sério.</p>
-            <p>—Gracioso, muito gracioso! exclamou Crispim Soares levantando as mãos ao céu.</p>
-            <p>Quanto à idéia de ampliar o território da loucura, achou-a o boticário extravagante; mas a modéstia, principal adorno de seu espírito, não lhe sofreu confessar outra coisa além de um nobre entusiasmo; declarou-a sublime e verdadeira, e acrescentou que era "caso de matraca". Esta expressão não tem equivalente no estilo moderno. Naquele tempo, Itaguaí que como as demais vilas, arraiais e povoações da colônia, não dispunha de imprensa, tinha dois modos de divulgar uma notícia; ou por meio de cartazes manuscritos e pregados na porta da Câmara, e da matriz; — ou por meio de matraca.</p>
-            <p>Eis em que consistia este segundo uso. Contratava-se um homem, por um ou mais dias, para andar as ruas do povoado, com uma matraca na mão.</p>
-            <p>De quando em quando tocava a matraca, reunia-se gente, e ele anunciava o que lhe incumbiam, — um remédio para sezões, umas terras lavradias, um soneto, um donativo eclesiástico, a melhor tesoura da vila, o mais belo discurso do ano, etc. O sistema tinha inconvenientes para a paz pública; mas era conservado pela grande energia de divulgação que possuía. Por exemplo, um dos vereadores, — aquele justamente que mais se opusera à criação da Casa Verde, — desfrutava a reputação de perfeito educador de cobras e macacos, e aliás nunca domesticara um só desses bichos; mas, tinha o cuidado de fazer trabalhar a matraca todos os meses. E dizem as crônicas que algumas pessoas afirmavam ter visto cascavéis dançando no peito do vereador; afirmação perfeitamente falsa, mas só devida à absoluta confiança no sistema. Verdade, verdade, nem todas as instituições do antigo regímen mereciam o desprezo do nosso século.</p>`,
+            <p>—Gracioso, muito gracioso! exclamou Crispim.</p>
+            <p>Quanto à idéia de ampliar o território da loucura, achou-a extravagante, mas declarou-a sublime, dizendo que era "caso de matraca".</p>
+            <p>Naquele tempo, Itaguaí não dispunha de imprensa; tinha dois modos de divulgar uma notícia: cartazes manuscritos ou matraca. Contratava-se um homem para andar com uma matraca pelas ruas; tocava-a, reunia gente e anunciava o que lhe incumbiam. O sistema tinha inconvenientes, mas era conservado pela grande energia de divulgação. Assim, um vereador que se opusera à Casa Verde desfrutava a reputação de educador de cobras e macacos, sem nunca ter domesticado um; mas fazia trabalhar a matraca todos os meses.</p>`,
             
-            `<p>—Há melhor do que anunciar a minha idéia, é praticá-la, respondeu o alienista à insinuação do boticário.</p>
-            <p>E o boticário, não divergindo sensivelmente deste modo de ver, disse-lhe que sim, que era melhor começar pela execução.</p>
-            <p>—Sempre haverá tempo de a dar à matraca, concluiu ele.</p>
-            <p>Simão Bacamarte refletiu ainda um instante, e disse:</p>
-            <p>—Suponho o espírito humano uma vasta concha, o meu fim, Sr. Soares, é ver se posso extrair a pérola, que é a razão; por outros termos, demarquemos definitivamente os limites da razão e da loucura. A razão é o perfeito equilíbrio de todas as faculdades; fora daí insânia, insânia e só insânia.</p>
-            <p>O Vigário Lopes a quem ele confiou a nova teoria, declarou lisamente que não chegava a entendê-la, que era uma obra absurda, e se não era absurda, era de tal modo colossal que não merecia princípio de execução.</p>
-            <p>—Com a definição atual, que é a de todos os tempos, acrescentou, a loucura e a razão estão perfeitamente delimitadas. Sabe-se onde uma acaba e onde a outra começa. Para que transpor a cerca?</p>
-            <p>Sobre o lábio fino e discreto do alienista rogou a vaga sombra de uma intenção de riso, em que o desdém vinha casado à comiseração; mas nenhuma palavra saiu de suas egrégias entranhas.</p>
-            <p>A ciência contentou-se em estender a mão à teologia, — com tal segurança, que a teologia não soube enfim se devia crer em si ou na outra. Itaguaí e o universo ficavam à beira de uma revolução.</p>`
+            // Página 3 (global 13)
+            `<p>—Há melhor do que anunciar a minha idéia, é praticá-la, respondeu o alienista.</p>
+            <p>—Sempre haverá tempo de a dar à matraca, concluiu o boticário.</p>
+            <p>Simão Bacamarte refletiu e disse:</p>
+            <p>—Suponho o espírito humano uma vasta concha; meu fim é extrair a pérola, que é a razão. Demarquemos os limites da razão e da loucura. A razão é o perfeito equilíbrio de todas as faculdades; fora daí, insânia.</p>
+            <p>O Vigário Lopes, a quem ele confiou a nova teoria, declarou que era absurda, ou se não absurda, colossal demais para ser executada.</p>
+            <p>—Com a definição atual, a loucura e a razão estão perfeitamente delimitadas. Para que transpor a cerca?</p>
+            <p>Sobre o lábio do alienista rogou a vaga sombra de uma intenção de riso, mas nenhuma palavra saiu. A ciência estendeu a mão à teologia com tal segurança, que a teologia não soube se devia crer em si ou na outra. Itaguaí e o universo ficavam à beira de uma revolução.</p>`,
+            
+            // Página 4 (global 14) – EASTER EGG
+            `<p>Assim, com a alma cheia de conceitos novos e audaciosos, o alienista preparava-se para abalar os fundamentos da psicologia. O boticário, atônito, mal ousava crer no que ouvia, mas repetia consigo as frases do mestre, guardando-as no coração. A teoria de Simão Bacamarte, se não era aceita prontamente, ao menos começava a rondar as conversas da vila, provocando espanto e admiração. Uns a julgavam loucura; outros, obra de gênio. Ele, porém, impassível, continuava a pensar nos meios de experimentá-la, certo de que a verdade viria a lume, mais cedo ou mais tarde.</p>
+            <p>E foi assim que, entre o pasmo de alguns e a incredulidade de muitos, a Casa Verde e seu criador avançaram mais um passo na estrada que haveria de transformar a compreensão do espírito humano em Itaguaí — e, quem sabe, no mundo.</p>
+            
+            <div class="easter-egg-box">
+                <div class="easter-egg-text">
+                    <p>📺 <strong>Você encontrou um conteúdo extra!</strong> O 'Caso Especial O Alienista' da Rede Globo (1993) é uma maravilhosa adaptação livre do livro que você está lendo.</p>
+                    <p>Clicando aqui, você vai abrir o vídeo em uma nova aba. Deixe o vídeo lá, termine de ler o livro primeiro e depois aprecie esta joia da TV brasileira, com um elenco que dispensa apresentações. Tenho certeza de que você vai gostar muito.</p>
+                    <button class="easter-btn" id="easterEggBtn">🎬 Assista ao vídeo ➤</button>
+                </div>
+                <div class="easter-egg-img">
+                    <img src="https://s2-memoriaglobo.glbimg.com/7jDnuXWXPJXow539oonIFrGf5wU=/0x0:1230x1926/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_ee6202d7f3f346a7a5d7affb807d8893/internal_photos/bs/2024/v/4/x0vXq7TeKX5hdBUbCxMg/o-alienista-marco-nanini-i0000085.jpg" alt="Caso Especial O Alienista">
+                </div>
+            </div>`
         ];
 
-        const startPage = 11;         // primeira página deste capítulo (página 11 do livro)
+        const startPage = 11;          // primeira página deste capítulo
         const totalPages = pageContents.length;
         let currentPage = 0;
         let fontSizeIndex = 2;
@@ -198,6 +276,13 @@
             
             if (currentPage === totalPages-1) {
                 indexWrapper.style.display = 'block';
+                // Adiciona evento do Easter Egg após a página ser carregada
+                const easterBtn = document.getElementById('easterEggBtn');
+                if (easterBtn) {
+                    easterBtn.addEventListener('click', function() {
+                        window.open('https://www.youtube.com/watch?v=Cu7QifQPrgc', '_blank');
+                    });
+                }
             } else {
                 indexWrapper.style.display = 'none';
             }
