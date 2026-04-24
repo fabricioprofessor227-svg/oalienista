@@ -64,10 +64,6 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
-        .tool-btn.small {
-            min-width: 58px;
-            padding: 12px 8px;
-        }
         .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
         .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
 
@@ -83,10 +79,6 @@
             margin-top: 8px;
             width: auto;
             display: inline-block;
-            transition: 0.1s;
-        }
-        .btn-index-small:active {
-            background: #e6f0ea;
         }
         .index-wrapper {
             text-align: right;
@@ -99,18 +91,15 @@
     <div class="page-header">
         <h1>O Alienista · Capítulo III</h1>
         <div class="progress-row">
-            <span id="pageXofY">Página 1 de 3</span>
-            <span id="progressPercent">33%</span>
+            <span id="pageIndicator">Página 8</span>
         </div>
-        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 33%"></div></div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
     </div>
     <div class="text-content" id="pageContent"></div>
     <div class="toolbar-single">
         <button class="tool-btn" id="fontMinusBtn">A−</button>
         <button class="tool-btn" id="fontPlusBtn">A+</button>
-        <button class="tool-btn small" id="rate1xBtn">1x</button>
-        <button class="tool-btn small" id="rate13xBtn">1.3x</button>
-        <button class="tool-btn small" id="rate15xBtn">1.5x</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
         <button class="tool-btn" id="fullscreenBtn">⛶</button>
         <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
         <button class="tool-btn" id="prevBtnInline">◀</button>
@@ -123,9 +112,8 @@
 
 <script>
     (function(){
-        // CONTEÚDO DO CAPÍTULO III (DIVIDIDO EM 3 PÁGINAS)
+        // Conteúdo do Capítulo III (3 páginas)
         const pageContents = [
-            // Página 1
             `<p><strong>CAPÍTULO III - DEUS SABE O QUE FAZ</strong></p>
             <p>A ilustre dama, no fim de dois meses, achou-se a mais desgraçada das mulheres: caiu em profunda melancolia, ficou amarela, magra, comia pouco e suspirava a cada canto. Não ousava fazer-lhe nenhuma queixa ou reproche, porque respeitava nele o seu marido e senhor, mas padecia calada, e definhava a olhos vistos. Um dia, ao jantar, como lhe perguntasse o marido o que é que tinha, respondeu tristemente que nada; depois atreveu-se um pouco, e foi ao ponto de dizer que se considerava tão viúva como dantes. E acrescentou:</p>
             <p>—Quem diria nunca que meia dúzia de lunáticos...</p>
@@ -134,7 +122,6 @@
             <p>D. Evarista sentiu faltar-lhe o chão debaixo dos pés. Nunca dos nuncas vira o Rio de Janeiro, que posto não fosse sequer uma pálida sombra do que hoje é, todavia era alguma coisa mais do que Itaguaí. Ver o Rio de Janeiro, para ela, equivalia ao sonho do hebreu cativo. Agora, principalmente, que o marido assentara de vez naquela povoação interior, agora é que ela perdera as últimas esperanças de respirar os ares da nossa boa cidade; e justamente agora é que ele a convidava a realizar os seus desejos de menina e moça.</p>
             <p>D. Evarista não pôde dissimular o gosto de semelhante proposta. Simão Bacamarte pagou-lhe na mão e sorriu — um sorriso tanto ou quanto filosófico, além de conjugal, em que parecia traduzir-se este pensamento: "Não há remédio certo para as dores da alma; esta senhora definha, porque lhe parece que a não amo; dou-lhe o Rio de Janeiro, e consola-se". E porque era homem estudioso tomou nota da observação.</p>`,
             
-            // Página 2
             `<p>Mas um dardo atravessou o coração de D. Evarista. Conteve-se, entretanto; limitou-se a dizer ao marido que, se ele não ia, ela não iria também, porque não havia de meter-se sozinha pelas estradas.</p>
             <p>—Irá com sua tia, redargüiu o alienista.</p>
             <p>Note-se que D. Evarista tinha pensado nisso mesmo; mas não quisera pedi-lo nem insinuá-lo, em primeiro lugar porque seria impor grandes despesas ao marido, em segundo lugar porque era melhor, mais metódico e racional que a proposta viesse dele.</p>
@@ -146,31 +133,30 @@
             <p>D. Evarista compreendeu, sorriu e respondeu com muita resignação:</p>
             <p>—Deus sabe o que faz!</p>`,
             
-            // Página 3
             `<p>Três meses depois efetuava-se a jornada. D. Evarista, a tia, a mulher do boticário, um sobrinho deste, um padre que o alienista conhecera em Lisboa, e que de aventura achava-se em Itaguaí, cinco ou seis pajens, quatro mucamas, tal foi a comitiva que a população viu dali sair em certa manhã do mês de maio. As despedidas foram tristes para todos, menos para o alienista. Conquanto as lágrimas de D. Evarista fossem abundantes e sinceras, não chegaram a abalá-lo. Homem de ciência, e só de ciência, nada o consternava fora da ciência; e se alguma coisa o preocupava naquela ocasião, se ele deixava correr pela multidão um olhar inquieto e policial, não era outra coisa mais do que a idéia de que algum demente podia achar-se ali misturado com a gente de juízo.</p>
             <p>—Adeus! soluçaram enfim as damas e o boticário.</p>
             <p>E partiu a comitiva. Crispim Soares, ao tornar a casa, trazia os olhos entre as duas orelhas da besta ruana em que vinha montado; Simão Bacamarte alongava os seus pelo horizonte adiante, deixando ao cavalo a responsabilidade do regresso. Imagem vivaz do gênio e do vulgo! Um fita o presente, com todas as suas lágrimas e saudades, outro devassa o futuro com todas as suas auroras.</p>`
         ];
 
-        let currentPage = 0;
+        const startPage = 8;          // primeira página deste capítulo (página 8 do livro)
         const totalPages = pageContents.length;
+        let currentPage = 0;
         let fontSizeIndex = 2;
         const fontSizes = [16, 26, 36, 48, 56];
-        let currentRate = 1;
+        
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
         
         let utterance = null;
         let speaking = false;
 
         // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
         const pageContent = document.getElementById('pageContent');
-        const pageXofY = document.getElementById('pageXofY');
         const progressFill = document.getElementById('progressFill');
-        const progressPercent = document.getElementById('progressPercent');
         const fontMinus = document.getElementById('fontMinusBtn');
         const fontPlus = document.getElementById('fontPlusBtn');
-        const rate1x = document.getElementById('rate1xBtn');
-        const rate13x = document.getElementById('rate13xBtn');
-        const rate15x = document.getElementById('rate15xBtn');
+        const rateBtn = document.getElementById('rateBtn');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
         const speakBtn = document.getElementById('speakBtn');
         const prevBtn = document.getElementById('prevBtnInline');
@@ -191,7 +177,7 @@
             utterance = new SpeechSynthesisUtterance(text);
             const voices = window.speechSynthesis.getVoices();
             utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
-            utterance.rate = currentRate;
+            utterance.rate = rates[rateIndex];
             utterance.onend = () => { speaking = false; };
             window.speechSynthesis.speak(utterance);
             speaking = true;
@@ -199,17 +185,16 @@
 
         function updateUI() {
             pageContent.innerHTML = pageContents[currentPage];
-            pageXofY.textContent = `Página ${currentPage+1} de ${totalPages}`;
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
             const percent = ((currentPage+1) / totalPages) * 100;
             progressFill.style.width = percent + '%';
-            progressPercent.textContent = Math.round(percent) + '%';
             
             if (currentPage === totalPages-1) {
                 indexWrapper.style.display = 'block';
             } else {
                 indexWrapper.style.display = 'none';
             }
-            
             applyFontSize();
         }
 
@@ -232,40 +217,23 @@
             updateUI();
         }
 
-        function setRate(rate) {
-            currentRate = rate;
-            rate1x.style.fontWeight = rate === 1 ? 'bold' : 'normal';
-            rate13x.style.fontWeight = rate === 1.3 ? 'bold' : 'normal';
-            rate15x.style.fontWeight = rate === 1.5 ? 'bold' : 'normal';
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            if (speaking) speakPage();
         }
 
-        // Eventos
         prevBtn.addEventListener('click', () => goToPage(-1));
         nextBtn.addEventListener('click', () => goToPage(1));
-        backToIndexBtn.addEventListener('click', () => {
-            window.location.href = 'indice.html';
-        });
-        fontMinus.addEventListener('click', () => {
-            if (fontSizeIndex > 0) fontSizeIndex--;
-            applyFontSize();
-        });
-        fontPlus.addEventListener('click', () => {
-            if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++;
-            applyFontSize();
-        });
-        fullscreenBtn.addEventListener('click', () => {
-            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-            else document.exitFullscreen();
-        });
-        speakBtn.addEventListener('click', () => {
-            if (speaking) stopSpeaking();
-            else speakPage();
-        });
-        rate1x.addEventListener('click', () => setRate(1));
-        rate13x.addEventListener('click', () => setRate(1.3));
-        rate15x.addEventListener('click', () => setRate(1.5));
+        backToIndexBtn.addEventListener('click', () => { window.location.href = 'indice.html'; });
+        fontMinus.addEventListener('click', () => { if (fontSizeIndex > 0) fontSizeIndex--; applyFontSize(); });
+        fontPlus.addEventListener('click', () => { if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++; applyFontSize(); });
+        fullscreenBtn.addEventListener('click', () => { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); });
+        speakBtn.addEventListener('click', () => { if (speaking) stopSpeaking(); else speakPage(); });
+        rateBtn.addEventListener('click', cycleRate);
 
-        setRate(1);
+        cycleRate();
         updateUI();
     })();
 </script>
