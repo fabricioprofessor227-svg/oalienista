@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo XII</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo XII</h1>
+        <div class="progress-row">
+            <span id="pageIndicator">Página 36</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO XII (DIVIDIDO EM 4 PÁGINAS)
+        const pageContents = [
+            // Página 1 (global 36)
+            `<p><strong>CAPÍTULO XII - O FINAL DO § 4º</strong></p>
+            <p>Apagaram-se as luminárias, reconstituíram-se as famílias, tudo parecia reposto nos antigos eixos. Reinava a ordem, a Câmara exercia outra vez o governo sem nenhuma pressão externa; o presidente e o vereador Freitas tornaram aos seus lugares. O barbeiro Porfírio, ensinado pelos acontecimentos, tendo "provado tudo", como o poeta disse de Napoleão, e mais alguma coisa, porque Napoleão não provou a Casa Verde, o barbeiro achou preferível a glória obscura da navalha e da tesoura às calamidades brilhantes do poder; foi, é certo, processado; mas a população da vila implorou a clemência de Sua Majestade; daí o perdão. João Pina foi absolvido, atendendo-se a que ele derrocara um rebelde. Os cronistas pensam que deste fato é que nasceu o nosso adágio: — ladrão que furta ladrão tem cem anos de perdão; — adágio imoral, é verdade, mas grandemente útil.</p>
+            <p>Não só findaram as queixas contra o alienista, mas até nenhum ressentimento ficou dos atos que ele praticara; acrescendo que os reclusos da Casa Verde, desde que ele os declarara plenamente ajuizados, sentiram-se tomados de profundo reconhecimento e férvido entusiasmo. Muitos entenderam que o alienista merecia uma especial manifestação e deram-lhe um baile, ao qual se seguiram outros bailes e jantares. Dizem as crônicas que D. Evarista a princípio tivera idéia de separar-se do consorte, mas a dor de perder a companhia de tão grande homem venceu qualquer ressentimento de amor-próprio e o casal veio a ser ainda mais feliz do que antes.</p>
+            <p>Não menos íntima ficou a amizade do alienista e do boticário. Este concluiu do ofício de Simão Bacamarte que a prudência é a primeira das virtudes em tempos de revolução e apreciou muito a magnanimidade do alienista, que ao dar-lhe a liberdade estendeu-lhe a mão de amigo velho.</p>
+            <p>—É um grande homem, disse ele à mulher, referindo aquela circunstância.</p>`,
+            
+            // Página 2 (global 37)
+            `<p>Não é preciso falar do albardeiro, do Costa, do Coelho, do Martim Brito e outros especialmente nomeados neste escrito; basta dizer que puderam exercer livremente os seus hábitos anteriores. O próprio Martim Brito, recluso por um discurso em que louvara enfaticamente D. Evarista, fez agora outro em honra do insigne médico — "cujo altíssimo gênio, elevando as asas muito acima do sol, deixou abaixo de si todos os demais espíritos da terra".</p>
+            <p>— Agradeço as suas palavras, retorquiu-lhe o alienista, e ainda me não arrependo de o haver restituído à liberdade.</p>
+            <p>Entretanto, a Câmara que respondera o ofício de Simão Bacamarte com a ressalva de que oportunamente estatuiria em relação ao final do § 4º, tratou enfim de legislar sobre ele. Foi aprovada sem debate uma postura, autorizando o alienista a agasalhar na Casa Verde as pessoas que se achassem no gozo do perfeito equilíbrio das faculdades mentais. E porque a experiência da Câmara tivesse sido dolorosa, estabeleceu ela a cláusula de que a autorização era provisória, limitada a um ano, para o fim de ser experimentada a nova teoria psicológica, podendo a Câmara antes mesmo daquele prazo mandar fechar a Casa Verde, se a isso fosse aconselhada por motivos de ordem pública. O vereador Freitas propôs também a declaração de que, em nenhum caso, fossem os vereadores recolhidos ao asilo dos alienados: cláusula que foi aceita, votada e incluída na postura apesar das reclamações do vereador Galvão. O argumento principal deste magistrado é que a Câmara legislando sobre uma experiência científica, não podia excluir as pessoas dos seus membros das consequências da lei; a exceção era odiosa e ridícula. Mal proferira estas duas palavras, romperam os vereadores em altos brados contra a audácia e insensatez do colega; este, porém, ouviu-os e limitou-se a dizer que votava contra a exceção.</p>
+            <p>—A vereança, concluiu ele, não nos dá nenhum poder especial nem nos elimina do espírito humano.</p>`,
+            
+            // Página 3 (global 38)
+            `<p>Simão Bacamarte aceitou a postura com todas as restrições. Quanto à exclusão dos vereadores, declarou que teria profundo sentimento se fosse compelido a recolhê-los à Casa Verde; a cláusula, porém, era a melhor prova de que eles não padeciam do perfeito equilíbrio das faculdades mentais. Não acontecia o mesmo ao vereador Galvão, cujo acerto na objeção feita, e cuja moderação na resposta dada às invectivas dos colegas mostravam da parte dele um cérebro bem organizado; pelo que rogava à Câmara que lho entregasse. A Câmara sentindo-se ainda agravada pelo proceder do vereador Galvão, estimou o pedido do alienista e votou unanimemente a entrega.</p>
+            <p>Compreende-se que, pela teoria nova, não bastava um fato ou um dito para recolher alguém à Casa Verde; era preciso um longo exame, um vasto inquérito do passado e do presente. O Padre Lopes, por exemplo, só foi capturado trinta dias depois da postura, a mulher do boticário quarenta dias. A reclusão desta senhora encheu o consorte de indignação. Crispim Soares saiu de casa espumando de cólera e declarando às pessoas a quem encontrava que ia arrancar as orelhas ao tirano. Um sujeito, adversário do alienista, ouvindo na rua essa notícia, esqueceu os motivos de dissidência, e correu à casa de Simão Bacamarte a participar-lhe o perigo que corria. Simão Bacamarte mostrou-se grato ao procedimento do adversário, e poucos minutos lhe bastaram para conhecer a retidão dos seus sentimentos, a boa-fé, o respeito humano, a generosidade; apertou-lhe muito as mãos, e recolheu-o à Casa Verde.</p>
+            <p>—Um caso destes é raro, disse ele à mulher pasmada. Agora esperemos o nosso Crispim.</p>`,
+            
+            // Página 4 (global 39)
+            `<p>Crispim Soares entrou. A dor vencera a raiva, o boticário não arrancou as orelhas ao alienista. Este consolou o seu privado, assegurando-lhe que não era caso perdido; talvez a mulher tivesse alguma lesão cerebral; ia examiná-la com muita atenção; mas antes disso não podia deixá-la na rua. E, parecendo-lhe vantajoso reuni-los, porque a astúcia e velhacaria do marido poderiam de certo modo curar a beleza moral que ele descobrira na esposa, disse Simão Bacamarte:</p>
+            <p>—O senhor trabalhará durante o dia na botica, mas almoçará e jantará com sua mulher, e cá passará as noites, e os domingos e dias santos.</p>
+            <p>A proposta colocou o pobre boticário na situação do asno de Buridan. Queria viver com a mulher, mas temia voltar à Casa Verde; e nessa luta esteve algum tempo, até que D. Evarista o tirou da dificuldade, prometendo que se incumbiria de ver a amiga e transmitiria os recados de um para outro. Crispim Soares beijou-lhe as mãos agradecido. Este último rasgo de egoísmo pusilânime pareceu sublime ao alienista.</p>
+            <p>Ao cabo de cinco meses estavam alojadas umas dezoito pessoas; mas Simão Bacamarte não afrouxava; ia de rua em rua, de casa em casa, espreitando, interrogando, estudando; e quando colhia um enfermo levava-o com a mesma alegria com que outrora os arrebanhava às dúzias. Essa mesma desproporção confirmava a teoria nova; achara-se enfim a verdadeira patologia cerebral. Um dia conseguiu meter na Casa Verde o juiz de fora; mas procedia com tanto escrúpulo que o não fez senão depois de estudar minuciosamente todos os seus atos e interrogar os principais da vila. Mais de uma vez esteve prestes a recolher pessoas perfeitamente desequilibradas; foi o que se deu com um advogado, em quem reconheceu um tal conjunto de qualidades morais e mentais que era perigoso deixá-lo na rua. Mandou prendê-lo; mas o agente, desconfiado, pediu-lhe para fazer uma experiência; foi ter com um compadre, demandado por um testamento falso, e deu-lhe de conselho que tomasse por advogado o Salustiano; era o nome da pessoa em questão.</p>
+            <p>—Então parece-lhe...?</p>
+            <p>—Sem dúvida: vá, confesse tudo, a verdade inteira, seja qual for, e confie-lhe a causa.</p>
+            <p>O homem foi ter com o advogado, confessou ter falsificado o testamento e acabou pedindo que lhe tomasse a causa. Não se negou o advogado; estudou os papéis, arrazou eloquentemente, e provou a todas as luzes que o testamento era mais que verdadeiro. A inocência do réu foi solenemente proclamada pelo juiz e a herança passou-lhe às mãos. O distinto jurisconsulto deveu a esta experiência a liberdade.</p>`
+        ];
+
+        const startPage = 36;          // Primeira página deste capítulo (global)
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
+        const pageContent = document.getElementById('pageContent');
+        const progressFill = document.getElementById('progressFill');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rateBtn = document.getElementById('rateBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = rates[rateIndex];
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                window.location.href = 'oalienista011.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                window.location.href = 'oalienista013.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            if (speaking) speakPage();
+        }
+
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => { window.location.href = 'indice.html'; });
+        fontMinus.addEventListener('click', () => { if (fontSizeIndex > 0) fontSizeIndex--; applyFontSize(); });
+        fontPlus.addEventListener('click', () => { if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++; applyFontSize(); });
+        fullscreenBtn.addEventListener('click', () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); });
+        speakBtn.addEventListener('click', () => { if (speaking) stopSpeaking(); else speakPage(); });
+        rateBtn.addEventListener('click', cycleRate);
+
+        cycleRate();
+        updateUI();
+    })();
+</script>
+</body>
+</html>
