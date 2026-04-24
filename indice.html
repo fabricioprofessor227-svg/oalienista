@@ -2,107 +2,213 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Índice · O Alienista</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Verdana', 'Arial', sans-serif;
             background: #f5f7f6;
             color: #1a2e2a;
-            line-height: 1.5;
+            line-height: 1.4;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 20px;
         }
+
         .container {
-            max-width: 700px;
+            max-width: 850px;
             width: 100%;
             background: white;
             border-radius: 28px;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
-            padding: 30px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            padding: 25px 30px 35px;
             border: 1px solid #dde5e0;
         }
+
+        .header-img {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
         h1 {
             font-size: 2rem;
+            font-weight: 700;
             color: #0f3d2e;
-            margin-bottom: 8px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: center;
         }
+
         .subhead {
             color: #2a5e4a;
-            margin-bottom: 28px;
+            margin-bottom: 30px;
             font-style: italic;
             border-left: 5px solid #2a7f5e;
             padding-left: 16px;
+            font-size: 1rem;
         }
-        .indice {
+
+        .chapter-list {
             list-style: none;
             padding: 0;
+            margin: 25px 0;
         }
-        .indice li {
-            margin: 12px 0;
+
+        .chapter-list li {
+            margin-bottom: 14px;
             border-bottom: 1px solid #e0e8e3;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
         }
-        .indice a {
+
+        .chapter-list a {
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: #1a5e44;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            transition: color 0.2s;
         }
-        .indice a:hover {
+
+        .chapter-list a:hover {
             color: #0a3a2a;
             text-decoration: underline;
         }
-        .cap-num {
-            background: #e6f0ea;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: normal;
+
+        .chapter-title {
+            flex: 1;
         }
+
+        .chapter-page {
+            font-family: monospace;
+            font-size: 0.9rem;
+            font-weight: normal;
+            background: #eef4f1;
+            padding: 3px 10px;
+            border-radius: 30px;
+            color: #1a5e44;
+            white-space: nowrap;
+        }
+
         hr {
-            margin: 20px 0;
+            margin: 25px 0 20px;
             border-color: #dee6e1;
         }
+
         .info {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #5a7a6a;
             text-align: center;
             margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .chapter-list a {
+                font-size: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            .chapter-page {
+                align-self: flex-start;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>📖 O Alienista</h1>
-    <div class="subhead">Machado de Assis · Índice</div>
+    <div class="header-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hospital_D._Pedro_II.jpg/250px-Hospital_D._Pedro_II.jpg"
+             alt="Antigo hospital psiquiátrico (ilustração)"
+             style="max-width: 250px; border-radius: 16px;">
+    </div>
 
-    <ul class="indice">
-        <li><a href="oalienista001.html">Capítulo I <span class="cap-num">1</span></a></li>
-        <li><a href="oalienista002.html">Capítulo II <span class="cap-num">2</span></a></li>
-        <li><a href="oalienista003.html">Capítulo III <span class="cap-num">3</span></a></li>
-        <li><a href="oalienista004.html">Capítulo IV <span class="cap-num">4</span></a></li>
-        <li><a href="oalienista005.html">Capítulo V <span class="cap-num">5</span></a></li>
-        <li><a href="oalienista006.html">Capítulo VI <span class="cap-num">6</span></a></li>
-        <li><a href="oalienista007.html">Capítulo VII <span class="cap-num">7</span></a></li>
-        <li><a href="oalienista008.html">Capítulo VIII <span class="cap-num">8</span></a></li>
-        <li><a href="oalienista009.html">Capítulo IX <span class="cap-num">9</span></a></li>
-        <li><a href="oalienista010.html">Capítulo X <span class="cap-num">10</span></a></li>
-        <li><a href="oalienista011.html">Capítulo XI <span class="cap-num">11</span></a></li>
-        <li><a href="oalienista012.html">Capítulo XII <span class="cap-num">12</span></a></li>
-        <li><a href="oalienista013.html">Capítulo XIII <span class="cap-num">13</span></a></li>
+    <h1>📖 O Alienista</h1>
+    <div class="subhead">Machado de Assis · Índice completo</div>
+
+    <ul class="chapter-list">
+        <li><a href="oalienista001.html">
+            <span class="chapter-title">CAPÍTULO I – De como Itaguaí ganhou uma casa de orates</span>
+            <span class="chapter-page">página 1</span>
+        </a></li>
+        <li><a href="oalienista002.html">
+            <span class="chapter-title">CAPÍTULO II – Torrentes de loucos</span>
+            <span class="chapter-page">página 5</span>
+        </a></li>
+        <li><a href="oalienista003.html">
+            <span class="chapter-title">CAPÍTULO III – Deus sabe o que faz</span>
+            <span class="chapter-page">página 8</span>
+        </a></li>
+        <li><a href="oalienista004.html">
+            <span class="chapter-title">CAPÍTULO IV – Uma teoria nova</span>
+            <span class="chapter-page">página 11</span>
+        </a></li>
+        <li><a href="oalienista005.html">
+            <span class="chapter-title">CAPÍTULO V – O terror</span>
+            <span class="chapter-page">página 15</span>
+        </a></li>
+        <li><a href="oalienista006.html">
+            <span class="chapter-title">CAPÍTULO VI – A rebelião</span>
+            <span class="chapter-page">página 19</span>
+        </a></li>
+        <li><a href="oalienista007.html">
+            <span class="chapter-title">CAPÍTULO VII – O inesperado</span>
+            <span class="chapter-page">página 22</span>
+        </a></li>
+        <li><a href="oalienista008.html">
+            <span class="chapter-title">CAPÍTULO VIII – As angústias do boticário</span>
+            <span class="chapter-page">página 26</span>
+        </a></li>
+        <li><a href="oalienista009.html">
+            <span class="chapter-title">CAPÍTULO IX – Dois lindos casos</span>
+            <span class="chapter-page">página 28</span>
+        </a></li>
+        <li><a href="oalienista010.html">
+            <span class="chapter-title">CAPÍTULO X – Restauração</span>
+            <span class="chapter-page">página 30</span>
+        </a></li>
+        <li><a href="oalienista011.html">
+            <span class="chapter-title">CAPÍTULO XI – O assombro de Itaguaí</span>
+            <span class="chapter-page">página 34</span>
+        </a></li>
+        <li><a href="oalienista012.html">
+            <span class="chapter-title">CAPÍTULO XII – O final do § 4º</span>
+            <span class="chapter-page">página 36</span>
+        </a></li>
+        <li><a href="oalienista013.html">
+            <span class="chapter-title">CAPÍTULO XIII – Plus ultra!</span>
+            <span class="chapter-page">página 40</span>
+        </a></li>
     </ul>
+
     <hr>
     <div class="info">
-        📌 Escolha um capítulo para começar a leitura.<br>
-        O sistema lembrará seu progresso.
+        📌 Escolha um capítulo para iniciar a leitura.<br>
+        O sistema mantém seu progresso e exibe a numeração contínua do livro.
     </div>
 </div>
 </body>
