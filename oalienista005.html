@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo V</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo V</h1>
+        <div class="progress-row">
+            <span id="pageIndicator">Página 15</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO V (DIVIDIDO EM 4 PÁGINAS)
+        const pageContents = [
+            // Página 1 (global 15)
+            `<p><strong>CAPÍTULO V - O TERROR</strong></p>
+            <p>Quatro dias depois, a população de Itaguaí ouviu consternada a notícia de que um certo Costa fora recolhido à Casa Verde.</p>
+            <p>—Impossível!</p>
+            <p>—Qual impossível! foi recolhido hoje de manhã.</p>
+            <p>— Mas, na verdade, ele não merecia... Ainda em cima! depois de tanto que ele fez...</p>
+            <p>Costa era um dos cidadãos mais estimados de Itaguaí. Herdara quatrocentos mil cruzados em boa moeda de El-rei Dom João V, dinheiro cuja renda bastava, segundo lhe declarou o tio no testamento, para viver "até o fim do mundo". Tão depressa recolheu a herança, como entrou a dividi-la em empréstimos, sem usura, mil cruzados a um, dois mil a outro, trezentos a este, oitocentos àquele, a tal ponto que, no fim de cinco anos, estava sem nada. Se a miséria viesse de chofre, o pasmo de Itaguaí seria enorme; mas veio devagar; ele foi passando da opulência à abastança, da abastança à mediania, da mediania à pobreza, da pobreza à miséria, gradualmente. Ao cabo daqueles cinco anos, pessoas que levavam o chapéu ao chão, logo que ele assomava no fim da rua, agora batiam-lhe no ombro, com intimidade, davam-lhe piparotes no nariz, diziam-lhe pulhas. E o Costa sempre lhano, risonho. Nem se lhe dava de ver que os menos corteses eram justamente os que tinham ainda a dívida em aberto; ao contrário, parece que os agasalhava com maior prazer, e mais sublime resignação. Um dia, como um desses incuráveis devedores lhe atirasse uma chalaça grossa, e ele se risse dela, observou um desafeiçoado, com certa perfídia: — "Você suporta esse sujeito para ver se ele lhe paga". Costa não se deteve um minuto, foi ao devedor e perdoou-lhe a dívida.</p>
+            <p>— "Não admira, retorquiu o outro; o Costa abriu mão de uma estrela, que está no céu". Costa era perspicaz, entendeu que ele negava todo o merecimento ao ato, atribuindo-lhe a intenção de rejeitar o que não vinham meter-lhe na algibeira. Era também pundonoroso e inventivo; duas horas depois achou um meio de provar que lhe não cabia um tal labéu: pegou de algumas dobras, e mandou-as de empréstimo ao devedor.</p>
+            <p>—Agora espero que... — pensou ele sem concluir a frase.</p>`,
+            
+            // Página 2 (global 16)
+            `<p>Esse último rasgo do Costa persuadiu a crédulos e incrédulos; ninguém mais pôs em dúvida os sentimentos cavalheirescos daquele digno cidadão. As necessidades mais acanhadas saíram à rua, vieram bater-lhe à porta, com os seus chinelos velhos, com as suas capas remendadas. Um verme, entretanto, roía a alma do Costa: era o conceito do desafeto. Mas isso mesmo acabou; três meses depois veio este pedir-lhe uns cento e vinte cruzados com promessa de restituir-lhos daí a dois dias; era o resíduo da grande herança, mas era também uma nobre desforra: Costa emprestou o dinheiro logo, logo, e sem juros. Infelizmente não teve tempo de ser pago; cinco meses depois era recolhido à Casa Verde.</p>
+            <p>Imagina-se a consternação de Itaguaí, quando soube do caso. Não se falou em outra coisa, dizia-se que o Costa ensadecera, ao almoço, outros que de madrugada; e contavam-se os acessos, que eram furiosos, sombrios, terríveis, — ou mansos, e até engraçados, conforme as versões. Muita gente correu à Casa Verde, e achou o pobre Costa, tranqüilo, um pouco espantado, falando com muita clareza, e perguntando por que motivo o tinham levado para ali. Alguns foram ter com o alienista. Bacamarte aprovava esses sentimentos de estima e compaixão, mas acrescentava que a ciência era a ciência, e que ele não podia deixar na rua um mentecapto. A última pessoa que intercedeu por ele (porque depois do que vou contar ninguém mais se atreveu a procurar o terrível médico) foi uma pobre senhora, prima do Costa. O alienista disse-lhe confidencialmente que esse digno homem não estava no perfeito equilíbrio das faculdades mentais, à vista do modo como dissipara os cabedais que...</p>
+            <p>—Isso, não! isso, não! interrompeu a boa senhora com energia. Se ele gastou tão depressa o que recebeu, a culpa não é dele.</p>
+            <p>—Não?</p>
+            <p>—Não, senhor. Eu lhe digo como o negócio se passou. O defunto meu tio não era mau homem; mas quando estava furioso era capaz de nem tirar o chapéu ao Santíssimo. Ora, um dia, pouco tempo antes de morrer, descobriu que um escravo lhe roubara um boi; imagine como ficou.</p>`,
+            
+            // Página 3 (global 17)
+            `<p>A cara era um pimentão; todo ele tremia, a boca escumava; lembra-me como se fosse hoje. Então um homem feio, cabeludo, em mangas de camisa, chegou-se a ele e pediu água. Meu tio (Deus lhe fale na alma!) respondeu que fosse beber ao rio ou ao inferno. O homem olhou para ele, abriu a mão em ar de ameaça, e rogou esta praga: — "Todo o seu dinheiro não há de durar mais de sete anos e um dia, tão certo como isto ser o sino-salamão!" E mostrou o sino-salamão impresso no braço. Foi isto, meu senhor; foi esta praga daquele maldito.</p>
+            <p>Bacamarte espetara na pobre senhora um par de olhos agudos como punhais. Quando ela acabou, estendeu-lhe a mão polidamente, como se o fizesse à própria esposa do vice-rei, e convidou-a a ir falar ao primo. A mísera acreditou; ele levou-a à Casa Verde e encerrou-a na galeria dos alucinados.</p>
+            <p>A notícia desta aleivosia do ilustre Bacamarte lançou o terror à alma da população. Ninguém queria acabar de crer, que, sem motivo, sem inimizade, o alienista trancasse na Casa Verde uma senhora perfeitamente ajuizada, que não tinha outro crime senão o de interceder por um infeliz. Comentava-se o caso nas esquinas, nos barbeiros; edificou-se um romance, umas finezas namoradas que o alienista outrora dirigira à prima do Costa, a indignação do Costa e o desprezo da prima. E daí a vingança. Era claro. Mas a austeridade do alienista, a vida de estudos que ele levava, pareciam desmentir uma tal hipótese. Histórias! Tudo isso era naturalmente a capa do velhaco. E um dos mais crédulos chegou a murmurar que sabia de outras coisas, não as dizia, por não ter certeza plena, mas sabia, quase que podia jurar.</p>`,
+            
+            // Página 4 (global 18)
+            `<p>—Você, que é íntimo dele, não nos podia dizer o que há, o que houve, que motivo...</p>
+            <p>Crispim Soares derretia-se todo. Esse interrogar da gente inquieta e curiosa, dos amigos atônitos, era para ele uma consagração pública. Não havia duvidar; toda a povoação sabia enfim que o privado do alienista era ele, Crispim, o boticário, o colaborador do grande homem e das grandes coisas; daí a corrida à botica. Tudo isso dizia o carão jucundo e o riso discreto do boticário, o riso e o silêncio, porque ele não respondia nada; um, dois, três monossílabos, quando muito, soltos, secos, encapados no fiel sorriso constante e miúdo, cheio de mistérios científicos, que ele não podia, sem desdouro nem perigo, desvendar a nenhuma pessoa humana.</p>
+            <p>—Há coisa, pensavam os mais desconfiados.</p>
+            <p>Um desses limitou-se a pensá-lo, deu de ombros e foi embora. Tinha negócios pessoais. Acabava de construir uma casa suntuosa. Só a casa bastava para deter e chamar toda a gente; mas havia mais, — a mobília, que ele mandara vir da Hungria e da Holanda, segundo contava, e que se podia ver do lado de fora, porque as janelas viviam abertas, — e o jardim, que era uma obra-prima de arte e de gosto. Esse homem, que enriquecera no fabrico de albardas, tinha tido sempre o sonho de uma casa magnífica, jardim pomposo, mobília rara. Não deixou o negócio das albardas, mas repousava dele na contemplação da casa nova, a primeira de Itaguaí, mais grandiosa do que a Casa Verde, mais nobre do que a da Câmara. Entre a gente ilustre da povoação havia choro e ranger de dentes, quando se pensava, ou se falava, ou se louvava a casa do albardeiro, — um simples albardeiro, Deus do céu!</p>
+            <p>—Lá está ele embasbacado, diziam os transeuntes, de manhã.</p>
+            <p>De manhã, com efeito, era costume do Mateus estatelar-se, no meio do jardim, com os olhos na casa, namorado, durante uma longa hora, até que vinham chamá-lo para almoçar.</p>`
+        ];
+
+        // Configurações
+        const startPage = 15;          // Primeira página deste capítulo no livro completo
+        let currentPage = 0;           // Índice interno (0..totalPages-1)
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        // Velocidade: 0=1x, 1=1.3x, 2=1.5x
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
+        const pageContent = document.getElementById('pageContent');
+        const progressFill = document.getElementById('progressFill');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rateBtn = document.getElementById('rateBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = rates[rateIndex];
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
+            // Barra de progresso interna (proporcional ao capítulo)
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            
+            // Botão Voltar ao Índice visível apenas na última página interna
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                // Voltar para capítulo anterior
+                window.location.href = 'oalienista004.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                // Avançar para próximo capítulo
+                window.location.href = 'oalienista006.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            // Se estiver ouvindo no momento, reinicia a leitura com a nova velocidade
+            if (speaking) {
+                speakPage();
+            }
+        }
+
+        // Eventos
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => {
+            window.location.href = 'indice.html';
+        });
+        fontMinus.addEventListener('click', () => {
+            if (fontSizeIndex > 0) fontSizeIndex--;
+            applyFontSize();
+        });
+        fontPlus.addEventListener('click', () => {
+            if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++;
+            applyFontSize();
+        });
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+        });
+        speakBtn.addEventListener('click', () => {
+            if (speaking) stopSpeaking();
+            else speakPage();
+        });
+        rateBtn.addEventListener('click', cycleRate);
+
+        // Inicialização
+        cycleRate(); // define texto inicial 1x e índice 0
+        updateUI();
+    })();
+</script>
+</body>
+</html>
