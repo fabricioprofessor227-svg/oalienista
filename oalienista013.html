@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo XIII (Final)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo XIII (Final)</h1>
+        <div class="progress-row">
+            <span id="pageIndicator">Página 40</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO XIII - PLUS ULTRA! (DIVIDIDO EM 5 PÁGINAS)
+        const pageContents = [
+            // Página 1 (global 40)
+            `<p><strong>CAPÍTULO XIII - PLUS ULTRA!</strong></p>
+            <p>Era a vez da terapêutica. Simão Bacamarte, ativo e sagaz em descobrir enfermos, excedeu- se ainda na diligência e penetração com que principiou a tratá-los. Neste ponto todos os cronistas estão de pleno acordo: o ilustre alienista faz curas pasmosas, que excitaram a mais viva admiração em Itaguaí.</p>
+            <p>Com efeito, era difícil imaginar mais racional sistema terapêutico. Estando os loucos divididos por classes, segundo a perfeição moral que em cada um deles excedia às outras, Simão Bacamarte cuidou em atacar de frente a qualidade predominante. Suponhamos um modesto. Ele aplicava a medicação que pudesse incutir-lhe o sentimento oposto; e não ia logo às doses máximas, — graduava-as, conforme o estado, a idade, o temperamento, a posição social do enfermo. Às vezes bastava uma casaca, uma fita, uma cabeleira, uma bengala, para restituir a razão ao alienado; em outros casos a moléstia era mais rebelde; recorria então aos anéis de brilhantes, às distinções honoríficas, etc. Houve um doente poeta que resistiu a tudo. Simão Bacamarte começava a desesperar da cura, quando teve a idéia de mandar correr matraca para o fim de o apregoar como um rival de Garção e de Píndaro.</p>
+            <p>—Foi um santo remédio, contava a mãe do infeliz a uma comadre; foi um santo remédio.</p>
+            <p>Outro doente, também modesto, opôs a mesma rebeldia à medicação; mas, não sendo escritor (mal sabia assinar o nome), não se lhe podia aplicar o remédio da matraca. Simão Bacamarte lembrou-se de pedir para ele o lugar de secretário da Academia dos Encobertos, estabelecida em Itaguaí. Os lugares de presidente e secretários eram de nomeação régia, por especial graça do finado Rei Dom João V, e implicavam o tratamento de Excelência e o uso de uma placa de ouro no chapéu. O governo de Lisboa recusou o diploma; mas, representando o alienista que o não pedia como prêmio honorífico ou distinção legítima, e somente como um meio terapêutico para um caso difícil, o governo cedeu excepcionalmente à súplica; e ainda assim não o fez sem extraordinário esforço do ministro da marinha e ultramar, que vinha a ser primo do alienado. Foi outro santo remédio.</p>
+            <p>—Realmente, é admirável! Dizia-se nas ruas, ao ver a expressão sadia e enfunada dos dois ex-dementes.</p>`,
+            
+            // Página 2 (global 41)
+            `<p>Tal era o sistema. Imagina-se o resto. Cada beleza moral ou mental era atacada no ponto em que a perfeição parecia mais sólida; e o efeito era certo. Nem sempre era certo. Casos houve em que a qualidade predominante resistia a tudo; então o alienista atacava outra parte, aplicando à terapêutica o método da estratégia militar, que toma uma fortaleza por um ponto, se por outro o não pode conseguir.</p>
+            <p>No fim de cinco meses e meio estava vazia a Casa Verde; todos curados! O vereador Galvão, tão cruelmente afligido de moderação e eqüidade, teve a felicidade de perder um tio; digo felicidade, porque o tio deixou um testamento ambíguo, e ele obteve uma boa interpretação corrompendo os juízes e embaçando os outros herdeiros. A sinceridade do alienista manifestou-se nesse lance; confessou ingenuamente que não teve parte na cura: foi a simples vis medicatrix da natureza. Não aconteceu o mesmo com o Padre Lopes. Sabendo o alienista que ele ignorava perfeitamente o hebraico e o grego, incumbiu-o de fazer uma análise crítica da versão dos Setenta; o padre aceitou a incumbência, e em boa hora o fez; ao cabo de dois meses possuía um livro e a liberdade. Quanto à senhora do boticário, não ficou muito tempo na célula que lhe coube, e onde aliás não lhe faltaram carinhos.</p>
+            <p>—Por que é que o Crispim não vem visitar-me? dizia ela todos os dias.</p>
+            <p>Respondiam-lhe ora uma coisa, ora outra; afinal disseram-lhe a verdade inteira. A digna matrona não pôde conter a indignação e a vergonha. Nas explosões da cólera escaparam-lhe expressões soltas e vagas, como estas:</p>
+            <p>—Tratante!... velhaco!... ingrato!... Um patife que tem feito casas à custa de ungüentos falsificados e podres... Ah! tratante!...</p>
+            <p>Simão Bacamarte advertiu que, ainda quando não fosse verdadeira a acusação contida nestas palavras, bastavam elas para mostrar que a excelente senhora estava enfim restituída ao perfeito desequilíbrio das faculdades; e prontamente lhe deu alta.</p>`,
+            
+            // Página 3 (global 42)
+            `<p>Agora, se imaginais que o alienista ficou radiante ao ver sair o último hóspede da Casa Verde, mostrais com isso que ainda não conheceis o nosso homem. Plus ultra! era a sua divisa. Não lhe bastava ter descoberto a teoria verdadeira da loucura; não o contentava ter estabelecido em Itaguaí o reinado da razão. Plus ultra! Não ficou alegre, ficou preocupado, cogitativo; alguma coisa lhe dizia que a teoria nova tinha, em si mesma, outra e novíssima teoria.</p>
+            <p>—Vejamos, pensava ele; vejamos se chego enfim à última verdade.</p>
+            <p>Dizia isto, passeando ao longo da vasta sala, onde fulgurava a mais rica biblioteca dos domínios ultramarinos de Sua Majestade. Um amplo chambre de damasco, preso à cintura por um cordão de seda, com borlas de ouro (presente de uma universidade) envolvia o corpo majestoso e austero do ilustre alienista. A cabeleira cobria-lhe uma extensa e nobre calva adquirida nas cogitações cotidianas da ciência. Os pés, não delgados e femininos, não graúdos e mariolas, mas proporcionados ao vulto, eram resguardados por um par de sapatos cujas fivelas não passavam de simples e modesto latão. Vede a diferença: — só se lhe notava luxo naquilo que era de origem científica; o que propriamente vinha dele trazia a cor da moderação e da singeleza, virtudes tão ajustadas à pessoa de um sábio.</p>
+            <p>Era assim que ele ia, o grande alienista, de um cabo a outro da vasta biblioteca, metido em si mesmo, estranho a todas as coisas que não fosse o tenebroso problema da patologia cerebral. Súbito, parou. Em pé, diante de uma janela, com o cotovelo esquerdo apoiado na mão direita, aberta, e o queixo na mão esquerda, fechada, perguntou ele a si:</p>
+            <p>—Mas deveras estariam eles doidos, e foram curados por mim, — ou o que pareceu cura não foi mais do que a descoberta do perfeito desequilíbrio do cérebro?</p>`,
+            
+            // Página 4 (global 43)
+            `<p>E cavando por aí abaixo, eis o resultado a que chegou: os cérebros bem organizados que ele acabava de curar, eram desequilibrados como os outros. Sim, dizia ele consigo, eu não posso ter a pretensão de haver-lhes incutido um sentimento ou uma faculdade nova; uma e outra coisa existiam no estado latente, mas existiam.</p>
+            <p>Chegado a esta conclusão, o ilustre alienista teve duas sensações contrárias, uma de gozo, outra de abatimento. A de gozo foi por ver que, ao cabo de longas e pacientes investigações, constantes trabalhos, luta ingente com o povo, podia afirmar esta verdade: — não havia loucos em Itaguaí. Itaguaí não possuía um só mentecapto. Mas tão depressa esta idéia lhe refrescara a alma, outra apareceu que neutralizou o primeiro efeito; foi a idéia da dúvida. Pois quê! Itaguaí não possuiria um único cérebro concertado? Esta conclusão tão absoluta, não seria por isso mesmo errônea, e não vinha, portanto, destruir o largo e majestoso edifício da nova doutrina psicológica?</p>
+            <p>A aflição do egrégio Simão Bacamarte é definida pelos cronistas itaguaienses como uma das mais medonhas tempestades morais que têm desabado sobre o homem. Mas as tempestades só aterram os fracos; os fortes enrijam-se contra elas e fitam o trovão. Vinte minutos depois alumiou-se a fisionomia do alienista de uma suave claridade.</p>
+            <p>—Sim, há de ser isso, pensou ele.</p>
+            <p>Isso é isto. Simão Bacamarte achou em si os características do perfeito equilíbrio mental e moral; pareceu-lhe que possuía a sagacidade, a paciência, a perseverança, a tolerância, a veracidade, o vigor moral, a lealdade, todas as qualidades enfim que podem formar um acabado mentecapto. Duvidou logo, é certo, e chegou mesmo a concluir que era ilusão; mas, sendo homem prudente, resolveu convocar um conselho de amigos, a quem interrogou com franqueza. A opinião foi afirmativa.</p>`,
+            
+            // Página 5 (global 44)
+            `<p>—Nenhum defeito?</p>
+            <p>—Nenhum, disse em coro a assembléia.</p>
+            <p>—Nenhum vício?</p>
+            <p>—Nada.</p>
+            <p>—Tudo perfeito?</p>
+            <p>—Tudo.</p>
+            <p>—Não, impossível, bradou o alienista. Digo que não sinto em mim essa superioridade que acabo de ver definir com tanta magnificência. A simpatia é que vos faz falar. Estudo-me e nada acho que justifique os excessos da vossa bondade.</p>
+            <p>A assembléia insistiu; o alienista resistiu; finalmente o Padre Lopes explicou tudo com este conceito digno de um observador:</p>
+            <p>—Sabe a razão por que não vê as suas elevadas qualidades, que aliás todos nós admiramos? É porque tem ainda uma qualidade que realça as outras: — a modéstia.</p>
+            <p>Era decisivo. Simão Bacamarte curvou a cabeça juntamente alegre e triste, e ainda mais alegre do que triste. Ato contínuo, recolheu-se à Casa Verde. Em vão a mulher e os amigos lhe disseram que ficasse, que estava perfeitamente são e equilibrado: nem rogos nem sugestões nem lágrimas o detiveram um só instante.</p>
+            <p>—A questão é científica, dizia ele; trata-se de uma doutrina nova, cujo primeiro exemplo sou eu. Reúno em mim mesmo a teoria e a prática.</p>
+            <p>—Simão! Simão! meu amor! dizia-lhe a esposa com o rosto lavado em lágrimas.</p>
+            <p>Mas o ilustre médico, com os olhos acesos da convicção científica, trancou os ouvidos à saudade da mulher, e brandamente a repeliu. Fechada a porta da Casa Verde, entregou-se ao estudo e à cura de si mesmo. Dizem os cronistas que ele morreu dali a dezessete meses no mesmo estado em que entrou, sem ter podido alcançar nada. Alguns chegam ao ponto de conjeturar que nunca houve outro louco além dele em Itaguaí; mas esta opinião fundada em um boato que correu desde que o alienista expirou, não tem outra prova senão o boato; e boato duvidoso, pois é atribuído ao Padre Lopes, que com tanto fogo realçara as qualidades do grande homem. Seja como for, efetuou-se o enterro com muita pompa e rara solenidade.</p>
+            <p><strong>FIM</strong></p>`
+        ];
+
+        const startPage = 40;          // Primeira página deste capítulo (global)
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
+        const pageContent = document.getElementById('pageContent');
+        const progressFill = document.getElementById('progressFill');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rateBtn = document.getElementById('rateBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = rates[rateIndex];
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                window.location.href = 'oalienista012.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                // Última página do último capítulo: vai para CRÉDITOS
+                window.location.href = 'creditos.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            if (speaking) speakPage();
+        }
+
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => { window.location.href = 'indice.html'; });
+        fontMinus.addEventListener('click', () => { if (fontSizeIndex > 0) fontSizeIndex--; applyFontSize(); });
+        fontPlus.addEventListener('click', () => { if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++; applyFontSize(); });
+        fullscreenBtn.addEventListener('click', () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); });
+        speakBtn.addEventListener('click', () => { if (speaking) stopSpeaking(); else speakPage(); });
+        rateBtn.addEventListener('click', cycleRate);
+
+        cycleRate();
+        updateUI();
+    })();
+</script>
+</body>
+</html>
