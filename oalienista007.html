@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo VII</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo VII</h1>
+        <div class="progress-row">
+            <span id="pageIndicator">Página 22</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO VII (DIVIDIDO EM 4 PÁGINAS)
+        const pageContents = [
+            // Página 1 (global 22)
+            `<p><strong>CAPÍTULO VII - O INESPERADO</strong></p>
+            <p>Chegados os dragões em frente aos Canjicas houve um instante de estupefação. Os Canjicas não queriam crer que a força pública fosse mandada contra eles; mas o barbeiro compreendeu tudo e esperou. Os dragões pararam, o capitão intimou à multidão que se dispersasse; mas, conquanto uma parte dela estivesse inclinada a isso, a outra parte apoiou fortemente o barbeiro, cuja resposta consistiu nestes termos levantados:</p>
+            <p>—Não nos dispersaremos. Se quereis os nossos cadáveres, podeis tomá-los; mas só os cadáveres; não levareis a nossa honra, o nosso crédito, os nossos direitos, e com eles a salvação de Itaguaí.</p>
+            <p>Nada mais imprudente do que essa resposta do barbeiro; e nada mais natural. Era a vertigem das grandes crises. Talvez fosse também um excesso de confiança na abstenção das armas por parte dos dragões; confiança que o capitão dissipou logo, mandando carregar sobre os Canjicas. O momento foi indescritível. A multidão urrou furiosa; alguns, trepando às janelas das casas ou correndo pela rua fora, conseguiram escapar; mas a maioria ficou bufando de cólera, indignada, animada pela exortação do barbeiro. A derrota dos Canjicas estava iminente quando um terço dos dragões, — qualquer que fosse o motivo, as crônicas não o declaram, — passou subitamente para o lado da rebelião. Este inesperado reforço deu alma aos Canjicas, ao mesmo tempo que lançou o desanimo às fileiras da legalidade. Os soldados fiéis não tiveram coragem de atacar os seus próprios camaradas, e um a um foram passando para eles, de modo que, ao cabo de alguns minutos, o aspecto das coisas era totalmente outro. O capitão estava de um lado com alguma gente contra uma massa compacta que o ameaçava de morte. Não teve remédio, declarou-se vencido e entregou a espada ao barbeiro.</p>
+            <p>A revolução triunfante não perdeu um só minuto; recolheu os feridos às casas próximas e guiou para a Câmara. Povo e tropa fraternizavam, davam vivas a el-rei, ao vice-rei, a Itaguaí, ao "ilustre Porfírio". Este ia na frente, empunhando tão destramente a espada, como se ela fosse apenas uma navalha um pouco mais comprida. A vitória cingia-lhe a fronte de um nimbo misterioso. A dignidade de governo começava a alargar-lhe os quadris.</p>`,
+            
+            // Página 2 (global 23)
+            `<p>Os vereadores, às janelas, vendo a multidão e a tropa, cuidaram que a tropa capturara a multidão, e sem mais exame, entraram e votaram uma petição ao vice-rei para que mandasse dar um mês de soldo aos dragões, "cujo denodo salvou Itaguaí do abismo a que o tinha lançado uma cáfila de rebeldes". Esta frase foi proposta por Sebastião Freitas, o vereador dissidente cuja defesa dos Canjicas tanto escandalizara os colegas. Mas bem depressa a ilusão se desfez. Os vivas ao barbeiro, os morras aos vereadores e ao alienista vieram dar-lhes notícia da triste realidade. O presidente não desanimou: — Qualquer que seja a nossa sorte, disse ele, lembremo-nos que estamos ao serviço de Sua Majestade e do povo. — Sebastião insinuou que melhor se poderia servir à coroa e à vila saindo pelos fundos e indo conferenciar com o juiz de fora, mas toda a Câmara rejeitou esse alvitre.</p>
+            <p>Daí a nada o barbeiro, acompanhado de alguns de seus tenentes, entrava na sala da vereança e intimava à Câmara a sua queda. A Câmara não resistiu, entregou-se e foi dali para a cadeia. Então os amigos do barbeiro propuseram-lhe que assumisse o governo da vila em nome de Sua Majestade. Porfírio aceitou o encargo, embora não desconhecesse (acrescentou) os espinhos que trazia; disse mais que não podia dispensar o concurso dos amigos presentes; ao que eles prontamente anuíram. O barbeiro veio à janela e comunicou ao povo essas resoluções, que o povo ratificou, aclamando o barbeiro. Este tomou a denominação de — "Protetor da vila em nome de Sua Majestade, e do povo". — Expediu-se logo várias ordens importantes, comunicações oficiais do novo governo, uma exposição minuciosa ao vice-rei, com muitos protestos de obediência às ordens de Sua Majestade; finalmente uma proclamação ao povo, curta, mas enérgica.</p>`,
+            
+            // Página 3 (global 24)
+            `<p><strong>"Itaguaienses!</strong></p>
+            <p>Uma Câmara corrupta e violenta conspirava contra os interesses de Sua Majestade e do povo. A opinião pública tinha-a condenado; um punhado de cidadãos, fortemente apoiados pelos bravos dragões de Sua Majestade, acaba de a dissolver ignominiosamente, e por unânime consenso da vila, foi-me confiado o mando supremo, até que Sua Majestade se sirva ordenar o que parecer melhor ao seu real serviço. Itaguaienses! não vos peço senão que me rodeeis de confiança, que me auxilieis em restaurar a paz e a fazenda pública, tão desbaratada pela Câmara que ora findou às vossas mãos. Contai com o meu sacrifício, e ficai certos de que a coroa será por nós.</p>
+            <p style="text-align: right;">O Protetor da vila em nome de Sua Majestade e do povo<br>Porfírio Caetano das Neves".</p>
+            <p>Toda a gente advertiu no absoluto silêncio desta proclamação acerca da Casa Verde; e, segundo uns, não podia haver mais vivo indício dos projetos tenebrosos do barbeiro. O perigo era tanto maior quanto que, no meio mesmo desses graves sucessos, o alienista metera na Casa Verde umas sete ou oito pessoas, entre elas duas senhoras e sendo um dos homens aparentado com o Protetor. Não era um repto, um ato intencional; mas todos o interpretaram dessa maneira; e a vila respirou com a esperança de que o alienista dentro de vinte e quatro horas estaria a ferros e destruído o terrível cárcere.</p>
+            <p>O dia acabou alegremente. Enquanto o arauto da matraca ia recitando de esquina em esquina a proclamação, o povo espalhava-se nas ruas e jurava morrer em defesa do ilustre Porfírio. Poucos gritos contra a Casa Verde, prova de confiança na ação do governo. O barbeiro fez expedir um ato declarando feriado aquele dia, e entabulou negociações com o vigário para a celebração de um Te-Deum, tão conveniente era aos olhos dele a conjunção do poder temporal com o espiritual; mas o Padre Lopes recusou abertamente o seu concurso.</p>`,
+            
+            // Página 4 (global 25)
+            `<p>—Em todo caso, Vossa Reverendíssima não se alistará entre os inimigos do governo? disse-lhe o barbeiro, dando à fisionomia um aspecto tenebroso.</p>
+            <p>Ao que o Padre Lopes respondeu, sem responder:</p>
+            <p>—Como alistar-me, se o novo governo não tem inimigos?</p>
+            <p>O barbeiro sorriu; era a pura verdade. Salvo o capitão, os vereadores e os principais da vila, toda a gente o aclamava. Os mesmos principais, se o não aclamavam, não tinham saído contra ele. Nenhum dos almotacés deixou de vir receber as suas ordens. No geral, as famílias abençoavam o nome daquele que ia enfim libertar Itaguaí da Casa Verde e do terrível Simão Bacamarte.</p>`
+        ];
+
+        const startPage = 22;          // Primeira página deste capítulo (global)
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
+        const pageContent = document.getElementById('pageContent');
+        const progressFill = document.getElementById('progressFill');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rateBtn = document.getElementById('rateBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = rates[rateIndex];
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                window.location.href = 'oalienista006.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                window.location.href = 'oalienista008.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            if (speaking) speakPage();
+        }
+
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => { window.location.href = 'indice.html'; });
+        fontMinus.addEventListener('click', () => { if (fontSizeIndex > 0) fontSizeIndex--; applyFontSize(); });
+        fontPlus.addEventListener('click', () => { if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++; applyFontSize(); });
+        fullscreenBtn.addEventListener('click', () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); });
+        speakBtn.addEventListener('click', () => { if (speaking) stopSpeaking(); else speakPage(); });
+        rateBtn.addEventListener('click', cycleRate);
+
+        cycleRate();
+        updateUI();
+    })();
+</script>
+</body>
+</html>
