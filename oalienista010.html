@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>O Alienista · Capítulo X</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            background: #f5f7f6;
+            color: #1a2e2a;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .reader-wrapper {
+            width: 100%;
+            max-width: 85%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+            padding: 20px 30px;
+            border: 1px solid #dde5e0;
+        }
+        .page-header { margin-bottom: 12px; }
+        .page-header h1 { font-size: 1.7rem; font-weight: 700; color: #0f3d2e; line-height: 1.2; margin-bottom: 6px; }
+        .progress-row { display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: #1a5e44; margin-bottom: 6px; }
+        .progress-bar-bg { background: #dee6e1; height: 7px; border-radius: 20px; overflow: hidden; }
+        .progress-fill { background: #1a7a58; height: 7px; width: 0%; border-radius: 20px; transition: width 0.2s; }
+        .text-content {
+            text-align: justify;
+            padding: 8px 0 16px;
+            max-height: 58vh;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .text-content p { margin-bottom: 1em; }
+        .toolbar-single {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 14px;
+            overflow-x: auto;
+            padding: 4px 0 8px;
+        }
+        .tool-btn {
+            background: #ecf3ef;
+            border: 1px solid #b3cdbf;
+            color: #134531;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 14px;
+            border-radius: 48px;
+            min-width: 60px;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .tool-btn.small {
+            min-width: 58px;
+            padding: 12px 8px;
+        }
+        .tool-btn:active { background: #d0e0d7; transform: scale(0.96); }
+        .tool-btn:disabled { opacity: 0.4; background: #e0e8e3; pointer-events: none; }
+
+        .btn-index-small {
+            background: none;
+            border: 1px solid #a2bfb1;
+            color: #1a5e44;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: normal;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-top: 8px;
+            width: auto;
+            display: inline-block;
+            transition: 0.1s;
+        }
+        .btn-index-small:active {
+            background: #e6f0ea;
+        }
+        .index-wrapper {
+            text-align: right;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="reader-wrapper">
+    <div class="page-header">
+        <h1>O Alienista · Capítulo X</h1>
+        <div class="progress-row">
+            <span id="pageIndicator">Página 30</span>
+        </div>
+        <div class="progress-bar-bg"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    </div>
+    <div class="text-content" id="pageContent"></div>
+    <div class="toolbar-single">
+        <button class="tool-btn" id="fontMinusBtn">A−</button>
+        <button class="tool-btn" id="fontPlusBtn">A+</button>
+        <button class="tool-btn" id="rateBtn">1x</button>
+        <button class="tool-btn" id="fullscreenBtn">⛶</button>
+        <button class="tool-btn" id="speakBtn">🔊 Ouvir</button>
+        <button class="tool-btn" id="prevBtnInline">◀</button>
+        <button class="tool-btn" id="nextBtnInline">▶</button>
+    </div>
+    <div class="index-wrapper" id="indexWrapper" style="display: none;">
+        <button id="backToIndexBtn" class="btn-index-small">📖 Voltar ao Índice</button>
+    </div>
+</div>
+
+<script>
+    (function(){
+        // CONTEÚDO DO CAPÍTULO X (DIVIDIDO EM 4 PÁGINAS)
+        const pageContents = [
+            // Página 1 (global 30)
+            `<p><strong>CAPÍTULO X - RESTAURAÇÃO</strong></p>
+            <p>Dentro de cinco dias, o alienista meteu na Casa Verde cerca de cinqüenta aclamadores do novo governo. O povo indignou-se. O governo, atarantado, não sabia reagir. João Pina, outro barbeiro, dizia abertamente nas ruas, que o Porfírio estava "vendido ao ouro de Simão Bacamarte", frase que congregou em torno de João Pina a gente mais resoluta da vila. Porfírio vendo o antigo rival da navalha à testa da insurreição, compreendeu que a sua perda era irremediável, se não desse um grande golpe; expediu dois decretos, um abolindo a Casa Verde, outro desterrando o alienista. João Pina mostrou claramente com grandes frases que o ato de Porfírio era um simples aparato, um engodo, em que o povo não devia crer. Duas horas depois caía Porfírio ignominiosamente e João Pina assumia a difícil tarefa do governo. Como achasse nas gavetas as minutas da proclamação, da exposição ao vice-rei e de outros atos inaugurais do governo anterior, deu-se pressa em os fazer copiar e expedir; acrescentam os cronistas, e aliás subentende-se, que ele lhes mudou os nomes, e onde o outro barbeiro falara de uma Câmara corrupta, falou este de "um intruso eivado das más doutrinas francesas e contrário aos sacrossantos interesses de Sua Majestade", etc.</p>
+            <p>Nisto entrou na vila uma força mandada pelo vice-rei e restabeleceu a ordem. O alienista exigiu desde logo a entrega do barbeiro Porfírio e bem assim a de uns cinqüenta e tantos indivíduos que declarou mentecaptos; e não só lhe deram esses como afiançaram entregar-lhe mais dezenove sequazes do barbeiro, que convalesciam das feridas apanhadas na primeira rebelião.</p>
+            <p>Este ponto da crise de Itaguaí marca também o grau máximo da influência de Simão Bacamarte. Tudo quanto quis, deu-se-lhe; e uma das mais vivas provas do poder do ilustre médico achamo-la na prontidão com que os vereadores, restituídos a seus lugares, consentiram em que Sebastião Freitas também fosse recolhido ao hospício. O alienista, sabendo da extraordinária inconsistência das opiniões desse vereador, entendeu que era um caso patológico, e pediu-o. A mesma coisa aconteceu ao boticário. O alienista, desde que lhe falaram da momentânea adesão de Crispim Soares à rebelião dos Canjicas, comparou-a à aprovação que sempre recebera dele ainda na véspera, e mandou capturá-lo. Crispim Soares não negou o fato, mas explicou-o dizendo que cedera a um movimento de terror ao ver a rebelião triunfante, e deu como prova a ausência de nenhum outro ato seu, acrescentando que voltara logo à cama, doente. Simão Bacamarte não o contrariou; disse, porém, aos circunstantes que o terror também é pai da loucura, e que o caso de Crispim Soares lhe parecia dos mais caracterizados.</p>`,
+            
+            // Página 2 (global 31)
+            `<p>Mas a prova mais evidente da influência de Simão Bacamarte foi a docilidade com que a Câmara lhe entregou o próprio presidente. Este digno magistrado tinha declarado, em plena sessão, que não se contentava, para lavá-la da afronta dos Canjicas, com menos de trinta almudes de sangue; palavra que chegou aos ouvidos do alienista por boca do secretário da Câmara entusiasmado de tamanha energia. Simão Bacamarte começou por meter o secretário na Casa Verde, e foi dali à Câmara à qual declarou que o presidente estava padecendo da "demência dos touros", um gênero que ele pretendia estudar, com grande vantagem para os povos. A Câmara a princípio hesitou, mas acabou cedendo.</p>
+            <p>Daí em diante foi uma coleta desenfreada. Um homem não podia dar nascença ou curso à mais simples mentira do mundo, ainda daquelas que aproveitam ao inventor ou divulgador, que não fosse logo metido na Casa Verde. Tudo era loucura. Os cultores de enigmas, os fabricantes de charadas, de anagramas, os maldizentes, os curiosos da vida alheia, os que põem todo o seu cuidado na tafularia, um ou outro almotacé enfunado, ninguém escapava aos emissários do alienista. Ele respeitava as namoradas e não poupava as namoradeiras, dizendo que as primeiras cediam a um impulso natural e as segundas a um vício. Se um homem era avaro ou pródigo, ia do mesmo modo para a Casa Verde; daí a alegação de que não havia regra para a completa sanidade mental. Alguns cronistas crêem que Simão Bacamarte nem sempre procedia com lisura, e citam em abono da afirmação (que não sei se pode ser aceita) o fato de ter alcançado da Câmara uma postura autorizando o uso de um anel de prata no dedo polegar da mão esquerda, a toda a pessoa que, sem outra prova documental ou tradicional, declarasse ter nas veias duas ou três onças de sangue godo. Dizem esses cronistas que o fim secreto da insinuação à Câmara foi enriquecer um ourives amigo e compadre dele; mas, conquanto seja certo que o ourives viu prosperar o negócio depois da nova ordenação municipal, não o é menos que essa postura deu à Casa Verde uma multidão de inquilinos; pelo que, não se pode definir, sem temeridade, o verdadeiro fim do ilustre médico. Quanto à razão determinativa da captura e aposentação na Casa Verde de todos quantos usaram do anel, é um dos pontos mais obscuros da história de Itaguaí; a opinião mais verossímil é que eles foram recolhidos por andarem a gesticular, à toa, nas ruas, em casa, na igreja. Ninguém ignora que os doidos gesticulam muito. Em todo caso, é uma simples conjetura; de positivo, nada há.</p>`,
+            
+            // Página 3 (global 32)
+            `<p>—Onde é que este homem vai parar? diziam os principais da terra. Ah! se nós tivéssemos apoiado os Canjicas...</p>
+            <p>Um dia de manhã — dia em que a Câmara devia dar um grande baile, — a vila inteira ficou abalada com a notícia de que a própria esposa do alienista fora metida na Casa Verde. Ninguém acreditou; devia ser invenção de algum gaiato. E não era: era a verdade pura. D. Evarista fora recolhida às duas horas da noite. O Padre Lopes correu ao alienista e interrogou-o discretamente acerca do fato.</p>
+            <p>—Já há algum tempo que eu desconfiava, disse gravemente o marido. A modéstia com que ela vivera em ambos os matrimônios não podia conciliar-se com o furor das sedas, veludos, rendas e pedras preciosas que manifestou logo que voltou do Rio de Janeiro. Desde então comecei a observá-la. Suas conversas eram todas sobre esses objetos; se eu lhe falava das antigas cortes, inquiria logo da forma dos vestidos das damas; se uma senhora a visitava na minha ausência, antes de me dizer o objeto da visita, descrevia-me o trajo, aprovando umas coisas e censurando outras. Um dia, creio que Vossa Reverendíssima há de lembrar-se, propôs-se a fazer anualmente um vestido para a imagem de Nossa Senhora da matriz. Tudo isto eram sintomas graves; esta noite, porém, declarou-se a total demência. Tinha escolhido, preparado, enfeitado o vestuário que levaria ao baile da Câmara Municipal; só hesitava entre um colar de granada e outro de safira. Anteontem perguntou-me qual deles levaria; respondi-lhe que um ou outro lhe ficava bem. Ontem repetiu a pergunta ao almoço; pouco depois de jantar fui achá-la calada e pensativa. —Que tem? perguntei-lhe. —Queria levar o colar de granada, mas acho o de safira tão bonito! —Pois leve o de safira. —Ah! mas onde fica o de granada? — Enfim, passou a tarde sem novidade. Ceamos, e deitamo-nos. Alta noite, seria hora e meia, acordo e não a vejo; levanto-me, vou ao quarto de vestir, acho-a diante dos dois colares, ensaiando-os ao espelho, ora um ora outro. Era evidente a demência: recolhi-a logo.</p>`,
+            
+            // Página 4 (global 33)
+            `<p>O Padre Lopes não se satisfez com a resposta, mas não objetou nada. O alienista, porém, percebeu e explicou-lhe que o caso de D. Evarista era de "mania santuária", não incurável e em todo caso digno de estudo.</p>
+            <p>—Conto pô-la boa dentro de seis semanas, concluiu ele.</p>
+            <p>E a abnegação do ilustre médico deu-lhe grande realce. Conjeturas, invenções, desconfianças, tudo caiu por terra desde que ele não duvidou recolher à Casa Verde a própria mulher, a quem amava com todas as forças da alma. Ninguém mais tinha o direito de resistir-lhe — menos ainda o de atribuir-lhe intuitos alheios à ciência.</p>
+            <p>Era um grande homem austero, Hipócrates forrado de Catão.</p>`
+        ];
+
+        const startPage = 30;          // Primeira página deste capítulo (global)
+        let currentPage = 0;
+        const totalPages = pageContents.length;
+        let fontSizeIndex = 2;
+        const fontSizes = [16, 26, 36, 48, 56];
+        
+        let rateIndex = 0;
+        const rates = [1, 1.3, 1.5];
+        
+        let utterance = null;
+        let speaking = false;
+
+        // DOM
+        const pageIndicator = document.getElementById('pageIndicator');
+        const pageContent = document.getElementById('pageContent');
+        const progressFill = document.getElementById('progressFill');
+        const fontMinus = document.getElementById('fontMinusBtn');
+        const fontPlus = document.getElementById('fontPlusBtn');
+        const rateBtn = document.getElementById('rateBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const speakBtn = document.getElementById('speakBtn');
+        const prevBtn = document.getElementById('prevBtnInline');
+        const nextBtn = document.getElementById('nextBtnInline');
+        const indexWrapper = document.getElementById('indexWrapper');
+        const backToIndexBtn = document.getElementById('backToIndexBtn');
+
+        function stopSpeaking() {
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
+            speaking = false;
+        }
+
+        function speakPage() {
+            stopSpeaking();
+            const text = pageContent.innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            const voices = window.speechSynthesis.getVoices();
+            utterance.voice = voices.find(v => v.lang === 'pt-BR') || voices[0];
+            utterance.rate = rates[rateIndex];
+            utterance.onend = () => { speaking = false; };
+            window.speechSynthesis.speak(utterance);
+            speaking = true;
+        }
+
+        function updateUI() {
+            pageContent.innerHTML = pageContents[currentPage];
+            const globalPage = startPage + currentPage;
+            pageIndicator.textContent = `Página ${globalPage}`;
+            const percent = ((currentPage+1) / totalPages) * 100;
+            progressFill.style.width = percent + '%';
+            
+            if (currentPage === totalPages-1) {
+                indexWrapper.style.display = 'block';
+            } else {
+                indexWrapper.style.display = 'none';
+            }
+            applyFontSize();
+        }
+
+        function applyFontSize() {
+            pageContent.style.fontSize = fontSizes[fontSizeIndex] + 'px';
+        }
+
+        function goToPage(delta) {
+            let newPage = currentPage + delta;
+            if (newPage < 0) {
+                window.location.href = 'oalienista009.html';
+                return;
+            }
+            if (newPage >= totalPages) {
+                window.location.href = 'oalienista011.html';
+                return;
+            }
+            stopSpeaking();
+            currentPage = newPage;
+            updateUI();
+        }
+
+        function cycleRate() {
+            rateIndex = (rateIndex + 1) % rates.length;
+            const rateValue = rates[rateIndex];
+            rateBtn.textContent = rateValue === 1 ? '1x' : (rateValue === 1.3 ? '1.3x' : '1.5x');
+            if (speaking) speakPage();
+        }
+
+        prevBtn.addEventListener('click', () => goToPage(-1));
+        nextBtn.addEventListener('click', () => goToPage(1));
+        backToIndexBtn.addEventListener('click', () => { window.location.href = 'indice.html'; });
+        fontMinus.addEventListener('click', () => { if (fontSizeIndex > 0) fontSizeIndex--; applyFontSize(); });
+        fontPlus.addEventListener('click', () => { if (fontSizeIndex < fontSizes.length-1) fontSizeIndex++; applyFontSize(); });
+        fullscreenBtn.addEventListener('click', () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); });
+        speakBtn.addEventListener('click', () => { if (speaking) stopSpeaking(); else speakPage(); });
+        rateBtn.addEventListener('click', cycleRate);
+
+        cycleRate();
+        updateUI();
+    })();
+</script>
+</body>
+</html>
